@@ -1,20 +1,4 @@
-<<<<<<< HEAD
-# OS X
-.DS_Store
 
-# Xcode
-build/
-=======
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## Build generated
-build/
-DerivedData/
-
-## Various settings
->>>>>>> b873db4d4a23f6d91e14a7271a1bddaaece77448
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,7 +8,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-<<<<<<< HEAD
+
 *.xccheckout
 profile
 *.moved-aside
@@ -92,4 +76,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
->>>>>>> b873db4d4a23f6d91e14a7271a1bddaaece77448
+
