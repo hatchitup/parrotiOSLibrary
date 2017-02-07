@@ -30,9 +30,9 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'AskParrot/Classes/**/*'
+  s.source_files = 'AskParrot/Classes/**/*.{m,h,mm,hpp,cpp,c,swift}'
   s.resource_bundles = {
-    'AskParrot' => ['AskParrot/Classes/**/*.{storyboard}']
+    'AskParrot' => ['AskParrot/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']
   }
   # s.resource_bundles = {
   #   'AskParrot' => ['AskParrot/Assets/*.png']

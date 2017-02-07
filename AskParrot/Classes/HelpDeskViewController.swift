@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class HelpDeskViewController: UIViewController {
+public class HelpDeskViewController: UIViewController , UIPopoverControllerDelegate{
 
     private var ID : String!
     
@@ -19,10 +19,24 @@ public class HelpDeskViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    public override func viewWillAppear(_ animated: Bool) {
+        let n = self.navigationController!.viewControllers.count - 2
+        if n < 0 {
+            let backButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(HelpDeskViewController.popViewController))
+            backButton.tintColor = UIColor.white
+            navigationItem.leftBarButtonItem = backButton
+        }
 
+    }
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func emailAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "loginPop", sender: self)
     }
     @objc private func bottomButtonsAction(sender : UIButton) {
         switch sender.tag {
@@ -63,14 +77,18 @@ public class HelpDeskViewController: UIViewController {
         view.addSubview(emailButton)
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwindToBaseViewController(segue: UIStoryboardSegue) {
+        print("Unwind to Root View Controller")
+        
     }
-    */
+    
+    // MARK: - Navigation
+     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "loginPop" {
+//            let popoverViewController = segue.destination as! UIViewController
+//            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.popover
+//        }
+    }
+ 
 
 }

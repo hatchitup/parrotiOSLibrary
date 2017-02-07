@@ -32,3 +32,10 @@ class Config {
         self.roundedImages = roundedImages
     }
 }
+
+struct APUser {
+    let name: String?
+    let email: String?
+    let phone: String?
+
+}

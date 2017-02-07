@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "AskParrot/Classes/**/*",
+  "source_files": "AskParrot/Classes/**/*.{m,h,mm,hpp,cpp,c,swift}",
   "resource_bundles": {
     "AskParrot": [
       "AskParrot/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}"

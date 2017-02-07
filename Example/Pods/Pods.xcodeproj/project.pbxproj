@@ -7,86 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32F524B443FB74B11E7A338ED9336A8D /* AskParrot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD3DD8B07208BD4576454FAA18D45A /* AskParrot-dummy.m */; };
-		388A70159E43F0215B6208DBE7953079 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		549475A91E49C63700E97719 /* HelpDeskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549475A81E49C63700E97719 /* HelpDeskViewController.swift */; };
-		549475B31E49DC2F00E97719 /* AskParrotUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549475B21E49DC2F00E97719 /* AskParrotUI.swift */; };
-		549475B51E49DCD200E97719 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549475B41E49DCD200E97719 /* Config.swift */; };
-		549475C11E49DE3C00E97719 /* UIViewController+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549475BB1E49DE3C00E97719 /* UIViewController+Config.swift */; };
-		549475C21E49DE3C00E97719 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549475BC1E49DE3C00E97719 /* UIViewController+Navigation.swift */; };
-		55A5680EA4A18F8FAD58C923EB31675E /* AskParrot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DF331FB75FF3AEF5C30FB939B59B75 /* AskParrot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0321E7A3D46AF2280663E5F26FDBE35A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		076D8A951E0819D66A98367200959017 /* HelpDeskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97555F88DE708E04ABBD82F3054C5EB /* HelpDeskViewController.swift */; };
+		15FF576712CB630F5659D3189FDE6A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37900BFE2F2098CDC673522D96A02531 /* Assets.xcassets */; };
+		54E2F75A1E4A087F00B908F2 /* APLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E2F7591E4A087F00B908F2 /* APLoginViewController.swift */; };
 		59FFDF1E749BA58BDCACEEF7465BADD0 /* Pods-AskParrot_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D82EB07F8D64BC96FDE5EB9B39127A3 /* AskParrotUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3377768D8AA684F876FE0226D8524DE9 /* AskParrotUI.swift */; };
 		67C921408FF71F81443AE8B6B9F35FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		7292C0B013E9CB8C30AD12EEA92A46C2 /* Pods-AskParrot_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 789C4716D532A78A4A71748CEC3864F5 /* Pods-AskParrot_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		794649AE1FB2333855830FBC2E29271D /* UIViewController+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80747B61909618732CF71A7B9187A3D7 /* UIViewController+Config.swift */; };
 		8852FA25067011CF44B012B1277ADD4B /* Pods-AskParrot_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F987EDB30E73CB00D19B214D538E2EF3 /* Pods-AskParrot_Example-dummy.m */; };
+		8BFC8B76F456625AD0A4B749C907A658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD226C8E36F1C8CA8465C5F15F2471 /* Config.swift */; };
 		9202161B5F9E83C822AC438712435D5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		96D79C48AF4AE9F2FB4DCD809162B0BC /* AskParrot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DC108E0C39C71E5D53191AE294015A3 /* AskParrot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9973AC950061D864C7681549B82B5A8A /* HelpDesk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1761FDA52F007C65CD3476E4E4B9433E /* HelpDesk.storyboard */; };
 		BA7AB94FF74E53BB783C9EA413755328 /* Pods-AskParrot_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CC76D5BA3C6478DC470865329E0524 /* Pods-AskParrot_Tests-dummy.m */; };
+		C56A0E743AC0B4CDF4B99803C837EC22 /* AskParrot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C66D29842AFDED887D8997FB71D5CD35 /* AskParrot-dummy.m */; };
+		CF629F68483F94E17F98BB9DB6E85378 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD355556CA211D42A0B92BFE720ACDB3 /* UIViewController+Navigation.swift */; };
+		DDF4DB6F0A4281ECA96004C19D4D5757 /* AskParrot.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFE9E7AA35E70590D12CA6A13B902B58 /* AskParrot.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		39E7D257CBDC663C636940FA5DD1DAD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2CC6B3796899B5DB31A6BE508148C7F;
+			remoteInfo = "AskParrot-AskParrot";
+		};
 		F905C0D4E25B293DB17F6B2075E7B9E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C7D44129D8ED519A3E4DF96F97E6E6F9;
+			remoteGlobalIDString = 4DFA1550DFBC55DFE2ED6EA70859B896;
 			remoteInfo = AskParrot;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00BD3DD8B07208BD4576454FAA18D45A /* AskParrot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AskParrot-dummy.m"; sourceTree = "<group>"; };
 		02E7BBC8AC09D4D177D26FB5F0B0CA90 /* Pods-AskParrot_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AskParrot_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0503DB12FD652DD204E69294926B2B99 /* Pods-AskParrot_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AskParrot_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		074673B2B9272EB61A53C7212BDA7AA8 /* Pods-AskParrot_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AskParrot_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		0A8A9FB253241C8FCD74AB1A507A2EE0 /* Pods-AskParrot_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AskParrot_Example-resources.sh"; sourceTree = "<group>"; };
 		10794993062648901B084F4A3ADFA9E1 /* Pods-AskParrot_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AskParrot_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1211F54B24B04F7BFB4945D278C0DB42 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21ED176BD8D7490A9B159BA98502EA15 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C4575B646B7B1D366E7E924260CFE6 /* Pods-AskParrot_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AskParrot_Tests-resources.sh"; sourceTree = "<group>"; };
-		3C4A0FEE09D8D85EA6CDBE09F745C08F /* AskParrot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AskParrot.modulemap; sourceTree = "<group>"; };
-		549475A81E49C63700E97719 /* HelpDeskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskViewController.swift; sourceTree = "<group>"; };
-		549475B21E49DC2F00E97719 /* AskParrotUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskParrotUI.swift; sourceTree = "<group>"; };
-		549475B41E49DCD200E97719 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		549475BB1E49DE3C00E97719 /* UIViewController+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Config.swift"; sourceTree = "<group>"; };
-		549475BC1E49DE3C00E97719 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
-		54BD4C801E49E6C800C5C5B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HelpDesk.storyboard; sourceTree = "<group>"; };
+		2E8DD6D80ECE6A50582E0D4EEBD927B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3377768D8AA684F876FE0226D8524DE9 /* AskParrotUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AskParrotUI.swift; sourceTree = "<group>"; };
+		37900BFE2F2098CDC673522D96A02531 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		473AF8BC2F0E9D4D5F9211213D2A8558 /* AskParrot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AskParrot.modulemap; sourceTree = "<group>"; };
+		54E2F7591E4A087F00B908F2 /* APLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APLoginViewController.swift; sourceTree = "<group>"; };
 		6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AskParrot_Tests-umbrella.h"; sourceTree = "<group>"; };
 		67DE040810CBFBFA692A96DCC5007BAA /* Pods-AskParrot_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AskParrot_Example.release.xcconfig"; sourceTree = "<group>"; };
+		68A533400D6F5FD7E63AE6E4A91FFE76 /* ResourceBundle-AskParrot-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-AskParrot-Info.plist"; sourceTree = "<group>"; };
 		68C8A2B1126224940DA0CF2616CD5A17 /* Pods-AskParrot_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AskParrot_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6BBD226C8E36F1C8CA8465C5F15F2471 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		6DC108E0C39C71E5D53191AE294015A3 /* AskParrot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AskParrot-umbrella.h"; sourceTree = "<group>"; };
 		70CDB111C2E46BBD0F34848B595B1863 /* Pods-AskParrot_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AskParrot_Example.modulemap"; sourceTree = "<group>"; };
 		71B314B1529176CF1D9987D90B5B5880 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		789C4716D532A78A4A71748CEC3864F5 /* Pods-AskParrot_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AskParrot_Example-umbrella.h"; sourceTree = "<group>"; };
+		7E7A72F9AD516ED6F2E2FF0A21DC01CF /* Pods_AskParrot_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskParrot_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80747B61909618732CF71A7B9187A3D7 /* UIViewController+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Config.swift"; sourceTree = "<group>"; };
 		8B678AB1F127DA2CA2B0F8042A5DBF1A /* Pods-AskParrot_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AskParrot_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A8DA84E5CC1F56BB4F88E60F41FB7E62 /* AskParrot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AskParrot.xcconfig; sourceTree = "<group>"; };
-		B20D0BFDA7B512CA2FBE8ABA48531320 /* AskParrot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AskParrot-prefix.pch"; sourceTree = "<group>"; };
-		B6DF331FB75FF3AEF5C30FB939B59B75 /* AskParrot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AskParrot-umbrella.h"; sourceTree = "<group>"; };
+		94AC2897A2B4DF9A0F8B38989F8B2DE1 /* HelpDesk.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = HelpDesk.storyboard; path = Base.lproj/HelpDesk.storyboard; sourceTree = "<group>"; };
+		C66D29842AFDED887D8997FB71D5CD35 /* AskParrot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AskParrot-dummy.m"; sourceTree = "<group>"; };
+		C73311558C6A7D3A75D326C9BFBA2D02 /* AskParrot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AskParrot-prefix.pch"; sourceTree = "<group>"; };
+		C97555F88DE708E04ABBD82F3054C5EB /* HelpDeskViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpDeskViewController.swift; sourceTree = "<group>"; };
 		C9815F017F9E55586C9A54CE7277ABDE /* Pods-AskParrot_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AskParrot_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CEF769A52C02F4004D8A97ADA78BD023 /* AskParrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AskParrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E436EE22C48D09A8378AD860FFB82685 /* Pods_AskParrot_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskParrot_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A2631590394372CA42A2F22F42A526 /* Pods_AskParrot_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskParrot_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59C368B80E3B2859BBA76927B43BE2C /* AskParrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AskParrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD355556CA211D42A0B92BFE720ACDB3 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		DFE9E7AA35E70590D12CA6A13B902B58 /* AskParrot.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskParrot.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC76D5BA3C6478DC470865329E0524 /* Pods-AskParrot_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AskParrot_Tests-dummy.m"; sourceTree = "<group>"; };
 		EF068E7541BF0C29DA56830276F84483 /* Pods-AskParrot_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AskParrot_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F09437B67B98E0CD27CBB1527CF64C4E /* AskParrot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AskParrot.xcconfig; sourceTree = "<group>"; };
 		F37690F642CA22EA26D5FC17AF0C733B /* Pods-AskParrot_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AskParrot_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		F987EDB30E73CB00D19B214D538E2EF3 /* Pods-AskParrot_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AskParrot_Example-dummy.m"; sourceTree = "<group>"; };
-		F9C1704C0C09E7ED78AF2AC493AD4F65 /* Pods_AskParrot_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskParrot_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE35CD91D758A5A17A8F7B34C90B4510 /* Pods-AskParrot_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AskParrot_Tests.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		147F173283BBB12501877A784C1B66BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0321E7A3D46AF2280663E5F26FDBE35A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E0751416C6E892DFB54215D93C150E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9202161B5F9E83C822AC438712435D5F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54EA791C3A90469DA010260C2E9AB99D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				388A70159E43F0215B6208DBE7953079 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,25 +113,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F11AD64924088B542813AB74379E2402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BE132E20416F789B008CD86ED61D5AD /* Products */ = {
+		0B11D818197C52B7B4412687E0183D52 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CEF769A52C02F4004D8A97ADA78BD023 /* AskParrot.framework */,
-				F9C1704C0C09E7ED78AF2AC493AD4F65 /* Pods_AskParrot_Example.framework */,
-				E436EE22C48D09A8378AD860FFB82685 /* Pods_AskParrot_Tests.framework */,
+				80747B61909618732CF71A7B9187A3D7 /* UIViewController+Config.swift */,
+				DD355556CA211D42A0B92BFE720ACDB3 /* UIViewController+Navigation.swift */,
 			);
-			name = Products;
+			path = extensions;
 			sourceTree = "<group>";
 		};
-		2A60B6ACDE8D1A87C4EC22140326D591 /* Development Pods */ = {
+		0B6E9F59AD2282CF1C6F12FB8AEE37B8 /* AskParrot */ = {
 			isa = PBXGroup;
 			children = (
-				A21B7442816EA76E9117864464AAE6FD /* AskParrot */,
+				4D11FF0C01012A016C6806E31948B252 /* Classes */,
 			);
-			name = "Development Pods";
+			path = AskParrot;
+			sourceTree = "<group>";
+		};
+		293F8B3353B153763343AF582654FC15 /* AskParrot */ = {
+			isa = PBXGroup;
+			children = (
+				0B6E9F59AD2282CF1C6F12FB8AEE37B8 /* AskParrot */,
+				32A5DB145C15B0A80D7ECDADDE026999 /* Resources */,
+				F7C18D6B936F36E9C2C49B23902E318D /* Support Files */,
+			);
+			name = AskParrot;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		32A5DB145C15B0A80D7ECDADDE026999 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				843FFEA35EE47B24F5BBF3F1E9F376E7 /* AskParrot */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		4824DC527DF87CB0950E9D6F146072E6 /* Targets Support Files */ = {
@@ -128,42 +168,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		549475AD1E49CDDF00E97719 /* VC */ = {
+		4D11FF0C01012A016C6806E31948B252 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				549475A81E49C63700E97719 /* HelpDeskViewController.swift */,
+				54E2F7591E4A087F00B908F2 /* APLoginViewController.swift */,
+				3377768D8AA684F876FE0226D8524DE9 /* AskParrotUI.swift */,
+				6BBD226C8E36F1C8CA8465C5F15F2471 /* Config.swift */,
+				C97555F88DE708E04ABBD82F3054C5EB /* HelpDeskViewController.swift */,
+				0B11D818197C52B7B4412687E0183D52 /* extensions */,
 			);
-			name = VC;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		549475B01E49D81700E97719 /* Views */ = {
+		4EFCAA16CFB26B23F1CC1B84D1D373B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				DFE9E7AA35E70590D12CA6A13B902B58 /* AskParrot.bundle */,
+				D59C368B80E3B2859BBA76927B43BE2C /* AskParrot.framework */,
+				7E7A72F9AD516ED6F2E2FF0A21DC01CF /* Pods_AskParrot_Example.framework */,
+				D1A2631590394372CA42A2F22F42A526 /* Pods_AskParrot_Tests.framework */,
 			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		549475B61E49DE3C00E97719 /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				549475BB1E49DE3C00E97719 /* UIViewController+Config.swift */,
-				549475BC1E49DE3C00E97719 /* UIViewController+Navigation.swift */,
-			);
-			path = extensions;
-			sourceTree = "<group>";
-		};
-		549475C31E49E1FA00E97719 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		549475C41E49E20100E97719 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -174,15 +199,32 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		7DA79B4247E0406D557571D137E5E0B2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				37900BFE2F2098CDC673522D96A02531 /* Assets.xcassets */,
+				1761FDA52F007C65CD3476E4E4B9433E /* HelpDesk.storyboard */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				2A60B6ACDE8D1A87C4EC22140326D591 /* Development Pods */,
+				E4D812182E749B75C58A9D91AB1739EE /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0BE132E20416F789B008CD86ED61D5AD /* Products */,
+				4EFCAA16CFB26B23F1CC1B84D1D373B9 /* Products */,
 				4824DC527DF87CB0950E9D6F146072E6 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		843FFEA35EE47B24F5BBF3F1E9F376E7 /* AskParrot */ = {
+			isa = PBXGroup;
+			children = (
+				7DA79B4247E0406D557571D137E5E0B2 /* Classes */,
+			);
+			path = AskParrot;
 			sourceTree = "<group>";
 		};
 		90B7D70FF4B7622FFCCA85FD9E1B1665 /* Pods-AskParrot_Tests */ = {
@@ -201,40 +243,6 @@
 			);
 			name = "Pods-AskParrot_Tests";
 			path = "Target Support Files/Pods-AskParrot_Tests";
-			sourceTree = "<group>";
-		};
-		A21B7442816EA76E9117864464AAE6FD /* AskParrot */ = {
-			isa = PBXGroup;
-			children = (
-				549475C41E49E20100E97719 /* Resources */,
-				549475C31E49E1FA00E97719 /* Pod */,
-				B0FF467075164190D71040306E15DC4A /* AskParrot */,
-				A3804C92AAB9B98E83AC35FDD87B1CB9 /* Support Files */,
-			);
-			name = AskParrot;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		A3804C92AAB9B98E83AC35FDD87B1CB9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3C4A0FEE09D8D85EA6CDBE09F745C08F /* AskParrot.modulemap */,
-				A8DA84E5CC1F56BB4F88E60F41FB7E62 /* AskParrot.xcconfig */,
-				00BD3DD8B07208BD4576454FAA18D45A /* AskParrot-dummy.m */,
-				B20D0BFDA7B512CA2FBE8ABA48531320 /* AskParrot-prefix.pch */,
-				B6DF331FB75FF3AEF5C30FB939B59B75 /* AskParrot-umbrella.h */,
-				1211F54B24B04F7BFB4945D278C0DB42 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AskParrot";
-			sourceTree = "<group>";
-		};
-		B0FF467075164190D71040306E15DC4A /* AskParrot */ = {
-			isa = PBXGroup;
-			children = (
-				D1505B10747631A82EE9406F5EDD2997 /* Classes */,
-			);
-			path = AskParrot;
 			sourceTree = "<group>";
 		};
 		B6C877A393831D864E2F0DD7A81BCA37 /* Pods-AskParrot_Example */ = {
@@ -263,17 +271,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D1505B10747631A82EE9406F5EDD2997 /* Classes */ = {
+		E4D812182E749B75C58A9D91AB1739EE /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				549475B61E49DE3C00E97719 /* extensions */,
-				549475B01E49D81700E97719 /* Views */,
-				549475AD1E49CDDF00E97719 /* VC */,
-				54BD4C7F1E49E6C800C5C5B9 /* HelpDesk.storyboard */,
-				549475B21E49DC2F00E97719 /* AskParrotUI.swift */,
-				549475B41E49DCD200E97719 /* Config.swift */,
+				293F8B3353B153763343AF582654FC15 /* AskParrot */,
 			);
-			path = Classes;
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F7C18D6B936F36E9C2C49B23902E318D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				473AF8BC2F0E9D4D5F9211213D2A8558 /* AskParrot.modulemap */,
+				F09437B67B98E0CD27CBB1527CF64C4E /* AskParrot.xcconfig */,
+				C66D29842AFDED887D8997FB71D5CD35 /* AskParrot-dummy.m */,
+				C73311558C6A7D3A75D326C9BFBA2D02 /* AskParrot-prefix.pch */,
+				6DC108E0C39C71E5D53191AE294015A3 /* AskParrot-umbrella.h */,
+				2E8DD6D80ECE6A50582E0D4EEBD927B3 /* Info.plist */,
+				68A533400D6F5FD7E63AE6E4A91FFE76 /* ResourceBundle-AskParrot-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AskParrot";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,19 +305,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		697B48F01880BC420DF9CB047A27B0B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96D79C48AF4AE9F2FB4DCD809162B0BC /* AskParrot-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE7820C5B10B579A445003527EC220A7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7292C0B013E9CB8C30AD12EEA92A46C2 /* Pods-AskParrot_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F78C86F60BBEBEBCD73D27B831125E2E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55A5680EA4A18F8FAD58C923EB31675E /* AskParrot-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +339,26 @@
 			);
 			name = "Pods-AskParrot_Example";
 			productName = "Pods-AskParrot_Example";
-			productReference = F9C1704C0C09E7ED78AF2AC493AD4F65 /* Pods_AskParrot_Example.framework */;
+			productReference = 7E7A72F9AD516ED6F2E2FF0A21DC01CF /* Pods_AskParrot_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4DFA1550DFBC55DFE2ED6EA70859B896 /* AskParrot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08BF5E6AB2772F0B2AD3AA5503518207 /* Build configuration list for PBXNativeTarget "AskParrot" */;
+			buildPhases = (
+				E4735AC5EBF2508E0B357123319896E5 /* Sources */,
+				147F173283BBB12501877A784C1B66BC /* Frameworks */,
+				F4F2D5B088523ED9207FBFDCC93BC84C /* Resources */,
+				697B48F01880BC420DF9CB047A27B0B3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67E9F44A628C905127C4FBE4D968D016 /* PBXTargetDependency */,
+			);
+			name = AskParrot;
+			productName = AskParrot;
+			productReference = D59C368B80E3B2859BBA76927B43BE2C /* AskParrot.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5B81FAB308818B48CB4B6ED981DBDC00 /* Pods-AskParrot_Tests */ = {
@@ -338,25 +375,25 @@
 			);
 			name = "Pods-AskParrot_Tests";
 			productName = "Pods-AskParrot_Tests";
-			productReference = E436EE22C48D09A8378AD860FFB82685 /* Pods_AskParrot_Tests.framework */;
+			productReference = D1A2631590394372CA42A2F22F42A526 /* Pods_AskParrot_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C7D44129D8ED519A3E4DF96F97E6E6F9 /* AskParrot */ = {
+		C2CC6B3796899B5DB31A6BE508148C7F /* AskParrot-AskParrot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A72DEF8E14BF43B47D4C2E33B95EE479 /* Build configuration list for PBXNativeTarget "AskParrot" */;
+			buildConfigurationList = 244791B78A9810160C5822261F24392C /* Build configuration list for PBXNativeTarget "AskParrot-AskParrot" */;
 			buildPhases = (
-				6E1E5EC2400F401617D1BF7F7B8B9EA4 /* Sources */,
-				54EA791C3A90469DA010260C2E9AB99D /* Frameworks */,
-				F78C86F60BBEBEBCD73D27B831125E2E /* Headers */,
+				D31A6A83BD56D6CDA09A002BFEA2476D /* Sources */,
+				F11AD64924088B542813AB74379E2402 /* Frameworks */,
+				E27C5117BC6854D615CC0F0972259EF9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AskParrot;
-			productName = AskParrot;
-			productReference = CEF769A52C02F4004D8A97ADA78BD023 /* AskParrot.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "AskParrot-AskParrot";
+			productName = "AskParrot-AskParrot";
+			productReference = DFE9E7AA35E70590D12CA6A13B902B58 /* AskParrot.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -366,16 +403,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					439374AA55064E369661077B6864B361 = {
-						LastSwiftMigration = 0820;
-					};
-					C7D44129D8ED519A3E4DF96F97E6E6F9 = {
-						DevelopmentTeam = 332UBR4EW4;
-						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -383,19 +410,39 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 0BE132E20416F789B008CD86ED61D5AD /* Products */;
+			productRefGroup = 4EFCAA16CFB26B23F1CC1B84D1D373B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7D44129D8ED519A3E4DF96F97E6E6F9 /* AskParrot */,
+				4DFA1550DFBC55DFE2ED6EA70859B896 /* AskParrot */,
+				C2CC6B3796899B5DB31A6BE508148C7F /* AskParrot-AskParrot */,
 				439374AA55064E369661077B6864B361 /* Pods-AskParrot_Example */,
 				5B81FAB308818B48CB4B6ED981DBDC00 /* Pods-AskParrot_Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E27C5117BC6854D615CC0F0972259EF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FF576712CB630F5659D3189FDE6A5F /* Assets.xcassets in Resources */,
+				9973AC950061D864C7681549B82B5A8A /* HelpDesk.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4F2D5B088523ED9207FBFDCC93BC84C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF4DB6F0A4281ECA96004C19D4D5757 /* AskParrot.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45874E08CEE3028E1DD19A2EED059092 /* Sources */ = {
@@ -414,37 +461,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E1E5EC2400F401617D1BF7F7B8B9EA4 /* Sources */ = {
+		D31A6A83BD56D6CDA09A002BFEA2476D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549475A91E49C63700E97719 /* HelpDeskViewController.swift in Sources */,
-				549475B51E49DCD200E97719 /* Config.swift in Sources */,
-				32F524B443FB74B11E7A338ED9336A8D /* AskParrot-dummy.m in Sources */,
-				549475C21E49DE3C00E97719 /* UIViewController+Navigation.swift in Sources */,
-				549475B31E49DC2F00E97719 /* AskParrotUI.swift in Sources */,
-				549475C11E49DE3C00E97719 /* UIViewController+Config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4735AC5EBF2508E0B357123319896E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C56A0E743AC0B4CDF4B99803C837EC22 /* AskParrot-dummy.m in Sources */,
+				5D82EB07F8D64BC96FDE5EB9B39127A3 /* AskParrotUI.swift in Sources */,
+				8BFC8B76F456625AD0A4B749C907A658 /* Config.swift in Sources */,
+				076D8A951E0819D66A98367200959017 /* HelpDeskViewController.swift in Sources */,
+				794649AE1FB2333855830FBC2E29271D /* UIViewController+Config.swift in Sources */,
+				54E2F75A1E4A087F00B908F2 /* APLoginViewController.swift in Sources */,
+				CF629F68483F94E17F98BB9DB6E85378 /* UIViewController+Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		67E9F44A628C905127C4FBE4D968D016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AskParrot-AskParrot";
+			target = C2CC6B3796899B5DB31A6BE508148C7F /* AskParrot-AskParrot */;
+			targetProxy = 39E7D257CBDC663C636940FA5DD1DAD7 /* PBXContainerItemProxy */;
+		};
 		7C16FD47C95CE9C6E302E738B8C9B120 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AskParrot;
-			target = C7D44129D8ED519A3E4DF96F97E6E6F9 /* AskParrot */;
+			target = 4DFA1550DFBC55DFE2ED6EA70859B896 /* AskParrot */;
 			targetProxy = F905C0D4E25B293DB17F6B2075E7B9E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		54BD4C7F1E49E6C800C5C5B9 /* HelpDesk.storyboard */ = {
+		1761FDA52F007C65CD3476E4E4B9433E /* HelpDesk.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				54BD4C801E49E6C800C5C5B9 /* Base */,
+				94AC2897A2B4DF9A0F8B38989F8B2DE1 /* HelpDesk.storyboard */,
 			);
 			name = HelpDesk.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -485,18 +547,16 @@
 			};
 			name = Release;
 		};
-		4BA23C1964448B9281AFDBF3279A5DE2 /* Release */ = {
+		64C09FFBF92F9445DD3FC195A0B46F8B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DA84E5CC1F56BB4F88E60F41FB7E62 /* AskParrot.xcconfig */;
+			baseConfigurationReference = F09437B67B98E0CD27CBB1527CF64C4E /* AskParrot.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 332UBR4EW4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -509,9 +569,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AskParrot/AskParrot.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AskParrot;
 				PRODUCT_NAME = AskParrot;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -520,43 +578,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		6105AEE28886188A36930635BB1757B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DA84E5CC1F56BB4F88E60F41FB7E62 /* AskParrot.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 332UBR4EW4;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AskParrot/AskParrot-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AskParrot/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AskParrot/AskParrot.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AskParrot;
-				PRODUCT_NAME = AskParrot;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		720B023C179F29B5566AB6587DC66DAC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -587,12 +608,28 @@
 				PRODUCT_NAME = Pods_AskParrot_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		7F768727AA3831A1D474FACAB2D04040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09437B67B98E0CD27CBB1527CF64C4E /* AskParrot.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AskParrot";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AskParrot/ResourceBundle-AskParrot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AskParrot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		824EFEE359407B7051C30A0EEDAE3164 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -743,6 +780,55 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D6C511EF6D1AE0D618F16C945ED98D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09437B67B98E0CD27CBB1527CF64C4E /* AskParrot.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AskParrot";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AskParrot/ResourceBundle-AskParrot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AskParrot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		E689A3559D2A61207AE2F3522623921D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09437B67B98E0CD27CBB1527CF64C4E /* AskParrot.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AskParrot/AskParrot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AskParrot/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AskParrot/AskParrot.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AskParrot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -753,6 +839,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		08BF5E6AB2772F0B2AD3AA5503518207 /* Build configuration list for PBXNativeTarget "AskParrot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E689A3559D2A61207AE2F3522623921D /* Debug */,
+				64C09FFBF92F9445DD3FC195A0B46F8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		244791B78A9810160C5822261F24392C /* Build configuration list for PBXNativeTarget "AskParrot-AskParrot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F768727AA3831A1D474FACAB2D04040 /* Debug */,
+				D6C511EF6D1AE0D618F16C945ED98D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -767,15 +871,6 @@
 			buildConfigurations = (
 				824EFEE359407B7051C30A0EEDAE3164 /* Debug */,
 				4680D33A41960BD218FFB6EB7F4812E5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A72DEF8E14BF43B47D4C2E33B95EE479 /* Build configuration list for PBXNativeTarget "AskParrot" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6105AEE28886188A36930635BB1757B1 /* Debug */,
-				4BA23C1964448B9281AFDBF3279A5DE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
