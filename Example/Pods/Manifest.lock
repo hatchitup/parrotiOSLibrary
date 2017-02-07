@@ -1,0 +1,16 @@
+PODS:
+  - AskParrot (0.1.0)
+
+DEPENDENCIES:
+  - AskParrot (from `../`)
+
+EXTERNAL SOURCES:
+  AskParrot:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AskParrot: f488755a632a339250fa6c3e1ad982c728d378eb
+
+PODFILE CHECKSUM: 232e67194f1691f74b4c7a9d1b1f7f0b591577ed
+
+COCOAPODS: 1.2.0

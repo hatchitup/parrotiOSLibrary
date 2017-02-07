@@ -1,0 +1,6 @@
+framework module AskParrot {
+  umbrella header "AskParrot-umbrella.h"
+
+  export *
+  module * { export * }
+}

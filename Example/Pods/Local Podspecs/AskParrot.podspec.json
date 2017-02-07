@@ -1,0 +1,22 @@
+{
+  "name": "AskParrot",
+  "version": "0.1.0",
+  "summary": "A short description of AskParrot.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hrajput4@gmail.com/AskParrot",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hrajput4@gmail.com": "hemant@hatchitup.com"
+  },
+  "source": {
+    "git": "https://github.com/hrajput4@gmail.com/AskParrot.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AskParrot/Classes/**/*"
+}

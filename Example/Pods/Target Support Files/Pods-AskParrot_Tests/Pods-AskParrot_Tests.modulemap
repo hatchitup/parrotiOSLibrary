@@ -1,0 +1,6 @@
+framework module Pods_AskParrot_Tests {
+  umbrella header "Pods-AskParrot_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
