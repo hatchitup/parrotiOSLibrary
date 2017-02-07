@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AskParrot_Example' do
+  pod 'AskParrot', :path => '../'
+
+  target 'AskParrot_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
