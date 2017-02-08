@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-public class HelpDeskViewController: UIViewController , UIPopoverControllerDelegate{
+public class HelpDeskViewController: UIViewController {
 
     private var ID : String!
-    
+    fileprivate var datasource : FAQModel! = FAQModel()
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var table: UITableView!
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
 //        setupView()
         // Do any additional setup after loading the view.
-        
+        table.rowHeight = UITableViewAutomaticDimension
+        table.estimatedRowHeight = 80
+            Alamofire.request(Router.FAQs()).responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    do {
+                        self.datasource = FAQModel.init(fromJson: JSON(response.data))
+                        self.table.reloadData()
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+        }
     }
     public override func viewWillAppear(_ animated: Bool) {
         let n = self.navigationController!.viewControllers.count - 2
@@ -26,7 +44,7 @@ public class HelpDeskViewController: UIViewController , UIPopoverControllerDeleg
             backButton.tintColor = UIColor.white
             navigationItem.leftBarButtonItem = backButton
         }
-
+       
     }
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -36,19 +54,20 @@ public class HelpDeskViewController: UIViewController , UIPopoverControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     @IBAction func emailAction(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "loginPop", sender: self)
-    }
-    @objc private func bottomButtonsAction(sender : UIButton) {
         switch sender.tag {
-        case 1:
+        case 11:
             break
-        case 2:
-            break
-        case 3:
+        case 22:
+            self.performSegue(withIdentifier: "loginPop", sender: self)
+        case 33:
             break
         default:
             break
         }
+        
+    }
+    @objc private func bottomButtonsAction(sender : UIButton) {
+        
     }
     private func setupView(){
         let callButton = UIButton.init(type: .custom)
@@ -91,4 +110,32 @@ public class HelpDeskViewController: UIViewController , UIPopoverControllerDeleg
     }
  
 
+}
+extension HelpDeskViewController : UISearchBarDelegate {
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text != "" {
+            
+        }
+    }
+}
+extension HelpDeskViewController : UITableViewDelegate, UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.datasource.data.count
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "faqCellID", for: indexPath) as! faqCell
+        cell.questionLabel.text = String(repeating: datasource.data[indexPath.row].question, count: 50)
+        cell.answerLabel.text = String(repeating: datasource.data[indexPath.row].answer, count: 50)
+        return cell
+    }
+    
+   
+}
+ class faqCell: UITableViewCell {
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
 }

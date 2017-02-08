@@ -23,5 +23,13 @@
     "AskParrot": [
       "AskParrot/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}"
     ]
+  },
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "SwiftyJSON": [
+
+    ]
   }
 }

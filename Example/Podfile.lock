@@ -1,5 +1,9 @@
 PODS:
-  - AskParrot (0.1.0)
+  - Alamofire (4.3.0)
+  - AskParrot (0.1.0):
+    - Alamofire
+    - SwiftyJSON
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - AskParrot (from `../`)
@@ -9,7 +13,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AskParrot: e79af125c9842c0e1fe595f9a0ae34e437da362c
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AskParrot: dd6cd10b2490dbefcb8dec53e53210f7b2d20681
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 232e67194f1691f74b4c7a9d1b1f7f0b591577ed
 
