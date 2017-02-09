@@ -36,6 +36,7 @@ public class HelpDeskViewController: UIViewController {
                     print(error)
                 }
         }
+        applyConfiguration(config: AskParrotUI.config)
     }
     public override func viewWillAppear(_ animated: Bool) {
         let n = self.navigationController!.viewControllers.count - 2
@@ -127,7 +128,7 @@ extension HelpDeskViewController : UITableViewDelegate, UITableViewDataSource {
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "faqCellID", for: indexPath) as! faqCell
-        cell.questionLabel.text = String(repeating: datasource.data[indexPath.row].question, count: 50)
+        cell.questionLabel.text = String(repeating: datasource.data[indexPath.row].question, count: 5)
         cell.answerLabel.text = String(repeating: datasource.data[indexPath.row].answer, count: 50)
         return cell
     }

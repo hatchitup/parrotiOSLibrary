@@ -15,12 +15,14 @@ public class AskParrotUI {
     static let expectedConfigVersion = 1
     
     static var config = Config()
-    
+    static var id : String!
     public init() {
     }
     
-   
-    
+    public static func setConfig(config: NSData, ID: String) throws {
+        AskParrotUI.config = try ConfigParser().parse(data: config)
+        AskParrotUI.id = ID
+    }
     /**
      performs segue to elements profile screen
      - Parameter caller: calling UIViewController

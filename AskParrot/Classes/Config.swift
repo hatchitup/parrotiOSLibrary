@@ -15,8 +15,7 @@ class Config {
     let navigationBarTextColor: UIColor
     let backgroundColor: UIColor
     let roundedImages: Bool
-    
-    
+
     
     init() {
         navigationBarColor = UIColor.white

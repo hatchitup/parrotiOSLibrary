@@ -13,13 +13,7 @@ public class AskParrot {
 
     static let defaults: UserDefaults = UserDefaults(suiteName: "com.askparrot")!
     
-    public static func configure(appId: String){
-        defaults.set(appId, forKey: APUDKeys.appIDkey.rawValue)
-        defaults.synchronize()
-    }
-    public static func getAppId() -> String {
-        return defaults.string(forKey: APUDKeys.appIDkey.rawValue)!
-    }
+   
      static func isPad() -> Bool {
         
         return UIDevice.current.userInterfaceIdiom == .pad

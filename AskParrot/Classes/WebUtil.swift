@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 enum Router: URLRequestConvertible {
     static let baseURLString = "https://askparrot.com"
-    static let OAuthToken: String? = AskParrot.defaults.string(forKey: APUDKeys.appIDkey.rawValue)
+    static let OAuthToken: String? = AskParrotUI.id
     
     case FAQs()
     

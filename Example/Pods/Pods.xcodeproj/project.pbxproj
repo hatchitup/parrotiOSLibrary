@@ -24,6 +24,9 @@
 		4E987F81DDF14D0D2528EF9679DACB46 /* APLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14E9E08C001078C7A0861463E790A4 /* APLoginViewController.swift */; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEB670658597FB7864005ED913ECB6 /* Request.swift */; };
 		5440E24B1E4B2F1600BA6E04 /* FAQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5440E2491E4B2EAF00BA6E04 /* FAQModel.swift */; };
+		54A612A91E4C8810009883DC /* ConfigParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A612A71E4C8809009883DC /* ConfigParser.swift */; };
+		54A612AB1E4C882F009883DC /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A612AA1E4C882F009883DC /* ColorUtil.swift */; };
+		54A612AD1E4C88BD009883DC /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A612AC1E4C88BD009883DC /* UIColor+HexString.swift */; };
 		59FFDF1E749BA58BDCACEEF7465BADD0 /* Pods-AskParrot_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933A0580629CB79BDBD1D33483297F5 /* DispatchQueue+Alamofire.swift */; };
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE6D52AA2F0C3238B527C58255F520 /* ServerTrustPolicy.swift */; };
@@ -131,6 +134,9 @@
 		4C436A8870ED0B53B75D0CB1BD426860 /* HelpDeskViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpDeskViewController.swift; sourceTree = "<group>"; };
 		4F9704D770A5E735B008E7330E6E749B /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5440E2491E4B2EAF00BA6E04 /* FAQModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQModel.swift; sourceTree = "<group>"; };
+		54A612A71E4C8809009883DC /* ConfigParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigParser.swift; sourceTree = "<group>"; };
+		54A612AA1E4C882F009883DC /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		54A612AC1E4C88BD009883DC /* UIColor+HexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		5933A0580629CB79BDBD1D33483297F5 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		5BAF49D947BE280B0A2E1AAC252A86D3 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AskParrot_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -280,6 +286,8 @@
 				5406CF9F1E4B2CD3000219AE /* API */,
 				8F14E9E08C001078C7A0861463E790A4 /* APLoginViewController.swift */,
 				9170AEBFE8FC80C5C19253F2774424D3 /* AskParrot.swift */,
+				54A612AA1E4C882F009883DC /* ColorUtil.swift */,
+				54A612A71E4C8809009883DC /* ConfigParser.swift */,
 				BF6B837A69448B3437A3DDAEA8734B6E /* AskParrotUI.swift */,
 				0CEEB097D44711D81F591F3E95F4C7D2 /* Config.swift */,
 				4C436A8870ED0B53B75D0CB1BD426860 /* HelpDeskViewController.swift */,
@@ -344,6 +352,7 @@
 		80C4D4B0F4E7189B600E7FAB315A6DCB /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				54A612AC1E4C88BD009883DC /* UIColor+HexString.swift */,
 				A68DD34DB18C7BFCBD9CAC3B6F91CF38 /* AlertFactory.swift */,
 				88C9F63A616FFCD30703282BA688D5CE /* UITableView+NibLoading.swift */,
 				C2AD99E229B11110C709B5EB6EE25B80 /* UIViewController+Config.swift */,
@@ -770,11 +779,14 @@
 				8CD41086B6D94C140005808459FE500C /* AlertFactory.swift in Sources */,
 				4E987F81DDF14D0D2528EF9679DACB46 /* APLoginViewController.swift in Sources */,
 				2E8713174BC15D35388A498C56B42DA8 /* AskParrot-dummy.m in Sources */,
+				54A612AD1E4C88BD009883DC /* UIColor+HexString.swift in Sources */,
 				D0035BEB495048F9CD04C715EF2380EF /* AskParrot.swift in Sources */,
 				43CB683A451465C2CF8FF223CE7878EA /* AskParrotUI.swift in Sources */,
+				54A612AB1E4C882F009883DC /* ColorUtil.swift in Sources */,
 				DDD58A1D28D3CC9996ECB45978F05BA2 /* Config.swift in Sources */,
 				634C8B07E1032D1542AB1C89525394E3 /* HelpDeskViewController.swift in Sources */,
 				BDA0FE7B8B6E3001B994EC43FB162014 /* UITableView+NibLoading.swift in Sources */,
+				54A612A91E4C8810009883DC /* ConfigParser.swift in Sources */,
 				B45031A0DC0D445949797B277BEF5EC1 /* UIViewController+Config.swift in Sources */,
 				EBE2A8C46C96186E856D036F36B562E7 /* UIViewController+Navigation.swift in Sources */,
 				5440E24B1E4B2F1600BA6E04 /* FAQModel.swift in Sources */,
