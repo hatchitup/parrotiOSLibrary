@@ -13,18 +13,24 @@ import UIKit
 public class AskParrotUI {
     
     static let expectedConfigVersion = 1
-    
+    static let defaults: UserDefaults = UserDefaults(suiteName: "com.askparrot")!
     static var config = Config()
-    static var id : String!
     public init() {
     }
     
-    public static func setConfig(config: NSData, ID: String) throws {
-        AskParrotUI.config = try ConfigParser().parse(data: config)
-        AskParrotUI.id = ID
+    public static func start()  {
+        if let path = Bundle.main.path(forResource: "config", ofType: "json"){
+            do {
+                let data = try NSData(contentsOf: URL(fileURLWithPath: path) , options: NSData.ReadingOptions.mappedIfSafe)
+                AskParrotUI.config = try ConfigParser().parse(data: data)
+            } catch let error as NSError {
+                print("could not load config file! Error: \(error)")
+            }
+        }
+        
     }
     /**
-     performs segue to elements profile screen
+     performs segue to AskParrot HelpDesk screen
      - Parameter caller: calling UIViewController
      */
     public static func performSegueToHelpdesk(caller: UIViewController) {
@@ -38,7 +44,7 @@ public class AskParrotUI {
      instantiates a profile view controller from elements
      - Returns: elements profile view controller
      */
-    public static func profileViewController() -> HelpDeskViewController {
+    public static func helpDeskViewController() -> HelpDeskViewController {
         return helpdeskStoryboard().instantiateViewController(withIdentifier: "HelpDeskViewController") as! HelpDeskViewController
     }
     
@@ -54,5 +60,14 @@ public class AskParrotUI {
         
         let bundleURL = podBundle.url(forResource: "AskParrot", withExtension: "bundle")
         return Bundle(url: bundleURL!)!
+    }
+    static func isPad() -> Bool {
+        
+        return UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
+    static func isPhone() -> Bool {
+        
+        return UIDevice.current.userInterfaceIdiom == .phone
     }
 }

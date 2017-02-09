@@ -1,6 +1,6 @@
 //
 //  WebUtil.swift
-//  HAIP
+//  AskParrot
 //
 //  Created by Hemant Singh on 08/12/16.
 //  Copyright © 2016 Hemant Singh. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 enum Router: URLRequestConvertible {
     static let baseURLString = "https://askparrot.com"
-    static let OAuthToken: String? = AskParrotUI.id
+    static let OAuthToken: String? = AskParrotUI.config.appID
     
     case FAQs()
     

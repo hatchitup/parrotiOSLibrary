@@ -11,6 +11,7 @@ import UIKit
 
 class Config {
     
+    let appID: String
     let navigationBarColor: UIColor
     let navigationBarTextColor: UIColor
     let backgroundColor: UIColor
@@ -18,13 +19,15 @@ class Config {
 
     
     init() {
+        appID = ""
         navigationBarColor = UIColor.white
         navigationBarTextColor = UIColor.black
         backgroundColor = UIColor.white
         roundedImages = true
     }
     
-    init(navigationBarColor: UIColor, navigationBarTextColor: UIColor, backgroundColor: UIColor, roundedImages: Bool) {
+    init(id: String, navigationBarColor: UIColor, navigationBarTextColor: UIColor, backgroundColor: UIColor, roundedImages: Bool) {
+        self.appID = id
         self.navigationBarColor = navigationBarColor
         self.navigationBarTextColor = navigationBarTextColor
         self.backgroundColor = backgroundColor

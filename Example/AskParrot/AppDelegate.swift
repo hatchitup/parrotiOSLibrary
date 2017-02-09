@@ -16,15 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if let path = Bundle.main.path(forResource: "config", ofType: "json"){
-            do {
-                let data = try NSData(contentsOf: URL(fileURLWithPath: path) , options: NSData.ReadingOptions.mappedIfSafe)
-                try AskParrotUI.setConfig(config: data, ID: "dc5600c9-ed1d-11e6-8ed0-98e0d9a19ab7")
-            } catch let error as NSError {
-                print("could not load config file! Error: \(error)")
-            }
-        }
-        
+                 AskParrotUI.start()
+      
         return true
     }
 
