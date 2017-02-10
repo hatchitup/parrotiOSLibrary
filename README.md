@@ -19,6 +19,16 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "AskParrot"
 ```
+Drop the config.json file at the root folder of your .xcproj file downloaded from the AskParrot Web Dashboard.
+Add this to didFinishLaunchingWithOptions function in your AppDelegate file.
+```swift
+AskParrotUI.start()
+```
+
+Then to present the helpdesk from a View Controlller call :
+```swift
+ AskParrotUI.performSegueToHelpdesk(caller: self)
+```
 
 ## Author
 
