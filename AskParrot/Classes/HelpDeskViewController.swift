@@ -26,6 +26,7 @@ public class HelpDeskViewController: UIViewController {
             Alamofire.request(Router.FAQs()).responseJSON { (response) in
                 switch response.result {
                 case .success:
+                    print(JSON(response.data))
                     do {
                         self.datasource = FAQModel.init(fromJson: JSON(response.data))
                         self.table.reloadData()
@@ -36,6 +37,7 @@ public class HelpDeskViewController: UIViewController {
                     print(error)
                 }
         }
+        self.title = AskParrotUI.config.appName
         applyConfiguration(config: AskParrotUI.config)
     }
     public override func viewWillAppear(_ animated: Bool) {
@@ -128,8 +130,8 @@ extension HelpDeskViewController : UITableViewDelegate, UITableViewDataSource {
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "faqCellID", for: indexPath) as! faqCell
-        cell.questionLabel.text = String(repeating: datasource.data[indexPath.row].question, count: 5)
-        cell.answerLabel.text = String(repeating: datasource.data[indexPath.row].answer, count: 50)
+        cell.questionLabel.text = datasource.data[indexPath.row].question
+        cell.answerLabel.text = datasource.data[indexPath.row].answer
         return cell
     }
     

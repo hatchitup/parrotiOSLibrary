@@ -30,6 +30,9 @@
     ],
     "SwiftyJSON": [
 
+    ],
+    "Socket.IO-Client-Swift": [
+
     ]
   }
 }

@@ -90,11 +90,11 @@ class FAQModel: NSObject, NSCoding{
         if json.isEmpty{
             return
         }
-        addedBy = json["AddedBy"].stringValue
-        answer = json["Answer"].stringValue
-        appID = json["AppID"].stringValue
-        companyID = json["CompanyID"].stringValue
-        question = json["Question"].stringValue
+        addedBy = json["addedBy"].stringValue
+        answer = json["answer"].stringValue
+        appID = json["appId"].stringValue
+        companyID = json["companyId"].stringValue
+        question = json["question"].stringValue
         createdAt = json["createdAt"].stringValue
         id = json["id"].stringValue
     }

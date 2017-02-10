@@ -13,13 +13,9 @@
         <scene sceneID="xMB-bN-sgF">
             <objects>
                 <navigationController id="hxz-kf-2Hg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vNa-yV-XwQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="vNa-yV-XwQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0012335332576185465" green="0.74220359325408936" blue="0.71327066421508789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="xBX-lZ-J99" kind="relationship" relationship="rootViewController" id="kud-Qc-gxZ"/>
@@ -160,15 +156,50 @@
                     <connections>
                         <outlet property="searchBar" destination="bOI-hN-Z8C" id="G2k-sF-0lG"/>
                         <outlet property="table" destination="FZj-J7-DTr" id="qzL-eJ-z3R"/>
-                        <segue destination="sSf-gg-KUX" kind="popoverPresentation" identifier="loginPop" popoverAnchorView="KTU-5n-yAl" id="HWC-hS-lGZ">
-                            <popoverArrowDirection key="popoverArrowDirection"/>
-                            <popoverPassthroughViews>
-                                <tableView reference="FZj-J7-DTr"/>
-                            </popoverPassthroughViews>
-                        </segue>
+                        <segue destination="sSf-gg-KUX" kind="presentation" identifier="loginPop" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="HWC-hS-lGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbR-ke-y3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="fa1-SI-Met">
+                    <rect key="frame" x="0.0" y="0.0" width="349" height="295"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-gG-P80">
+                            <rect key="frame" x="16" y="41" width="317" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dm-q2-RMu">
+                            <rect key="frame" x="16" y="79" width="317" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmB-R2-sgH">
+                            <rect key="frame" x="139" y="16" width="71" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hc-3I-5iT">
+                            <rect key="frame" x="16" y="117" width="317" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XuH-gG-P80" firstAttribute="top" secondItem="rmB-R2-sgH" secondAttribute="bottom" constant="4" id="4if-Jh-Tmy"/>
+                        <constraint firstItem="XuH-gG-P80" firstAttribute="leading" secondItem="fa1-SI-Met" secondAttribute="leading" constant="16" id="MUg-0m-7d8"/>
+                        <constraint firstItem="rmB-R2-sgH" firstAttribute="top" secondItem="fa1-SI-Met" secondAttribute="top" constant="16" id="Xu6-s2-xjR"/>
+                        <constraint firstItem="rmB-R2-sgH" firstAttribute="centerX" secondItem="fa1-SI-Met" secondAttribute="centerX" id="ecX-Qd-eT2"/>
+                        <constraint firstAttribute="trailing" secondItem="XuH-gG-P80" secondAttribute="trailing" constant="16" id="qbR-yS-INI"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2008.8" y="754.27286356821594"/>
         </scene>
@@ -228,6 +259,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitAction:" destination="sSf-gg-KUX" eventType="touchUpInside" id="2w9-dd-ZOR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Query:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2h-h7-Zhf">
                                 <rect key="frame" x="16" y="218" width="343" height="21"/>
@@ -271,6 +305,13 @@
                             <constraint firstItem="tqX-6t-mfe" firstAttribute="top" secondItem="Ryy-3P-Jag" secondAttribute="bottom" constant="8" id="zJq-XI-Jw2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="iak-MS-A9I" id="k1N-Ju-iJ9"/>
+                        <outlet property="locationField" destination="dex-d5-QPD" id="kgy-Vq-5F6"/>
+                        <outlet property="nameField" destination="Ryy-3P-Jag" id="3R6-VO-59r"/>
+                        <outlet property="phoneField" destination="tqX-6t-mfe" id="vue-dB-PGY"/>
+                        <outlet property="queryField" destination="fbp-Kb-2s3" id="6L0-XM-Ngo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTe-gA-yR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="PQs-Nb-4yt" userLabel="Exit" sceneMemberID="exit"/>

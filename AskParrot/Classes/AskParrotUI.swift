@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 public class AskParrotUI {
     
@@ -27,7 +28,28 @@ public class AskParrotUI {
                 print("could not load config file! Error: \(error)")
             }
         }
-        
+        if AskParrotUI.getToken() != "" {
+            parrotPing()
+        }
+    }
+    public static func parrotPing(){
+        Alamofire.request(Router.Ping()).responseJSON(completionHandler: { (response) in
+            switch response.result {
+            case .success:
+                let user = User.init(fromJson: JSON(response.data))
+                AskParrotUI.setToken(token: user.authToken)
+                PersistencyManager.saveUser(user: user)
+            case .failure(let error):
+                print(error)
+            }
+        })
+    }
+    public static func setToken(token: String){
+        defaults.set(token, forKey: APUDKeys.tokenKey.rawValue)
+        defaults.synchronize()
+    }
+    public static func getToken() -> String {
+       return defaults.string(forKey: APUDKeys.tokenKey.rawValue) ?? ""
     }
     /**
      performs segue to AskParrot HelpDesk screen
@@ -57,7 +79,6 @@ public class AskParrotUI {
     
     static func getBundle() -> Bundle {
         let podBundle = Bundle(for: HelpDeskViewController.self)
-        
         let bundleURL = podBundle.url(forResource: "AskParrot", withExtension: "bundle")
         return Bundle(url: bundleURL!)!
     }

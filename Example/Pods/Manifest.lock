@@ -2,7 +2,9 @@ PODS:
   - Alamofire (4.3.0)
   - AskParrot (0.1.0):
     - Alamofire
+    - Socket.IO-Client-Swift
     - SwiftyJSON
+  - Socket.IO-Client-Swift (8.2.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -14,7 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
-  AskParrot: dd6cd10b2490dbefcb8dec53e53210f7b2d20681
+  AskParrot: 67dd5e5dd241eb18c77cc550233f2c898a535e28
+  Socket.IO-Client-Swift: 900cf511777045c80d1ce1f11f71261e87765dd1
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 232e67194f1691f74b4c7a9d1b1f7f0b591577ed

@@ -12,6 +12,8 @@ import UIKit
 class Config {
     
     let appID: String
+    let appLogo: String
+    let appName: String
     let navigationBarColor: UIColor
     let navigationBarTextColor: UIColor
     let backgroundColor: UIColor
@@ -20,14 +22,18 @@ class Config {
     
     init() {
         appID = ""
+        appLogo = ""
+        appName = ""
         navigationBarColor = UIColor.white
         navigationBarTextColor = UIColor.black
         backgroundColor = UIColor.white
         roundedImages = true
     }
     
-    init(id: String, navigationBarColor: UIColor, navigationBarTextColor: UIColor, backgroundColor: UIColor, roundedImages: Bool) {
+    init(id: String,logo: String,name: String, navigationBarColor: UIColor, navigationBarTextColor: UIColor, backgroundColor: UIColor, roundedImages: Bool) {
         self.appID = id
+        self.appLogo = logo
+        self.appName = name
         self.navigationBarColor = navigationBarColor
         self.navigationBarTextColor = navigationBarTextColor
         self.backgroundColor = backgroundColor
@@ -35,9 +41,4 @@ class Config {
     }
 }
 
-struct APUser {
-    let name: String?
-    let email: String?
-    let phone: String?
 
-}

@@ -10,22 +10,43 @@ import UIKit
 import Alamofire
 enum Router: URLRequestConvertible {
     static let baseURLString = "https://askparrot.com"
-    static let OAuthToken: String? = AskParrotUI.config.appID
     
+    case Register([String: AnyObject])
     case FAQs()
-    
+    case Ping()
+    case AddTicket([String: AnyObject])
     var method: Alamofire.HTTPMethod {
         switch self {
+        case .Register:
+            return .post
+        case .Ping:
+            return .get
         case .FAQs:
             return .get
+        case .AddTicket:
+            return .post
         }
     }
-    
+    var token: String {
+        switch self {
+        case .Register:
+            return AskParrotUI.config.appID
+        case .FAQs:
+            return AskParrotUI.config.appID
+        default:
+            return AskParrotUI.getToken()
+        }
+    }
     var path: String {
         switch self {
+        case .Register:
+            return "/api/customer"
         case .FAQs:
             return "/api/faq"
-    
+        case .Ping:
+            return "/api/pingcustomer"
+        case .AddTicket:
+            return "/api/ticket"
         }
     }
     
@@ -34,15 +55,14 @@ enum Router: URLRequestConvertible {
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        if let token = Router.OAuthToken {
-            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            print("Bearer \(token)")
-        }
+        urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         urlRequest.cachePolicy = .reloadRevalidatingCacheData
         print(urlRequest.url?.absoluteString ?? "nil url")
         switch self {
-        case .FAQs:
-            return urlRequest
+        case .Register(let params):
+            return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
+        case .AddTicket(let params):
+            return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
         default:
             return urlRequest
         }

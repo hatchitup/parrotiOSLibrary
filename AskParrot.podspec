@@ -39,4 +39,5 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency  'Alamofire'
    s.dependency  'SwiftyJSON'
+   s.dependency  'Socket.IO-Client-Swift'
 end
