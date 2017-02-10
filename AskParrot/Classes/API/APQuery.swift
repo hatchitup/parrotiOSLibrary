@@ -1,6 +1,6 @@
 //
 //  APQuery.swift
-//  Pods
+//  AskParrot
 //
 //  Created by Hemant Singh on 10/02/17.
 //

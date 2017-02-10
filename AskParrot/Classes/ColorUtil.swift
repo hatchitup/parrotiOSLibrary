@@ -1,8 +1,8 @@
 //
 //  ColorUtil.swift
-//  Pods
+//  AskParrot
 //
-//  Created by John Rikard Nilsen on 15/3/16.
+//  Created by Hemant Singh on 10/02/17.
 //
 //
 

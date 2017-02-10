@@ -1,8 +1,8 @@
 //
 //  Config.swift
-//  Pods
+//  AskParrot
 //
-//  Created by Hemant Singh on 07/02/17.
+//  Created by Hemant Singh on 10/02/17.
 //
 //
 
