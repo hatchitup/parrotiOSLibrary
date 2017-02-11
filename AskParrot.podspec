@@ -28,11 +28,11 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/hrajput4@gmail.com/AskParrot.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'AskParrot/Classes/**/*.{m,h,mm,hpp,cpp,c,swift}'
   s.resource_bundles = {
-    'AskParrot' => ['AskParrot/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']
+    'AskParrot' => ['AskParrot/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png,wav}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
@@ -40,4 +40,5 @@ TODO: Add long description of the pod here.
    s.dependency  'Alamofire'
    s.dependency  'SwiftyJSON'
    s.dependency  'Socket.IO-Client-Swift'
+   s.dependency  'SwiftSocket'
 end
