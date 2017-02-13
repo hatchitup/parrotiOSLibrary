@@ -37,11 +37,11 @@ class Message {
            })
 //        chat
         APSocketManager.sharedInstance.onData(key: "chat") { (response) in
-            print(JSON(response))
-            if JSON(response)["message"] != nil {
+            print(JSON(response.first))
+            if JSON(response.first)["message"] != nil {
             let message = Message.init(type: .text, content: "loading", owner: .sender, timestamp: 0, isRead: true)
             print(JSON(response))
-            message.downloadLastMessage(msg: JSON(response),fromConv: true, completion: { (_) in
+            message.downloadLastMessage(msg: JSON(response.first),fromConv: true, completion: { (_) in
                 completion(message)
             })
             }
