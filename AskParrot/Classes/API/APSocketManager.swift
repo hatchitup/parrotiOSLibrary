@@ -14,8 +14,6 @@ import SwiftSocket
 class APSocketManager: NSObject {
 
     static let sharedInstance = APSocketManager()
-    var key = ""
-    var value = ""
     var socket: SocketIOClient! = SocketIOClient(socketURL: NSURL(string: Router.baseURLString )! as URL, config:  [.path("/api/ws"),.log(true), .forcePolling(true),.extraHeaders(["Authorization": ("Bearer " + AskParrotUI.getToken())])])
     override init() {
         super.init()
@@ -47,11 +45,9 @@ class APSocketManager: NSObject {
 //
     }
     
-    func emitFor(key : String, value: String)  {
+    func emitFor(key : String, value: AnyObject)  {
         if socket.status == .connected{
-            socket.emit(key, value)
-            self.key = key
-            self.value = value
+            socket.emit(key, value as! SocketData)
         }
         else if socket.status != .connecting{
             socket.connect()

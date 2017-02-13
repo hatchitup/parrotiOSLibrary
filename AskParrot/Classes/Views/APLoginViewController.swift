@@ -18,7 +18,7 @@ class APLoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var queryField: UITextView!
-    var user : User!
+    var user : APUser!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +42,7 @@ class APLoginViewController: UIViewController {
         }
         else {
             if nameField.isNotEmpty() && emailField.isNotEmpty() && locationField.isNotEmpty()  && phoneField.isNotEmpty() {
-            let u = User.init(name: nameField.text!, phone: phoneField.text!, email: emailField.text!, location: locationField.text!)
+            let u = APUser.init(name: nameField.text!, phone: phoneField.text!, email: emailField.text!, location: locationField.text!)
             let dict = u.toDictionary()
             let payload = dict as! [String: AnyObject]
             Alamofire.request(Router.Register(payload)).responseJSON(completionHandler:

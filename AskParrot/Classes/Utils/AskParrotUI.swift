@@ -37,7 +37,7 @@ public class AskParrotUI {
         Alamofire.request(Router.Ping()).responseJSON(completionHandler: { (response) in
             switch response.result {
             case .success:
-                let user = User.init(fromJson: JSON(response.data))
+                let user = APUser.init(fromJson: JSON(response.data))
                 AskParrotUI.setToken(token: user.authToken)
                 PersistencyManager.saveUser(user: user)
             case .failure(let error):

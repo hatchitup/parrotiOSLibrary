@@ -27,7 +27,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     let barHeight: CGFloat = 50
     var currentUser: User?
     var canSendLocation = true
-    
+    var ticketID : String!
 
     //MARK: Methods
     func customization() {
@@ -38,7 +38,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.tableView.scrollIndicatorInsets.bottom = self.barHeight
         self.navigationItem.title = self.currentUser?.name
         self.navigationItem.setHidesBackButton(true, animated: false)
-        let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
+        let icon = UIImage.init(named: "back", in: AskParrotUI.getBundle(), compatibleWith: nil)?.withRenderingMode(.alwaysOriginal)
         let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
         self.navigationItem.leftBarButtonItem = backButton
         self.locationManager.delegate = self
@@ -46,7 +46,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     //Downloads messages
     func fetchData() {
-        Message.downloadAllMessages(forUserID: self.currentUser!.id, completion: {[weak weakSelf = self] (message) in
+        Message.downloadAllMessages(forTicketID: self.ticketID, completion: {[weak weakSelf = self] (message) in
             weakSelf?.items.append(message)
             weakSelf?.items.sort{ $0.timestamp < $1.timestamp }
             DispatchQueue.main.async {
@@ -62,13 +62,14 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     //Hides current viewcontroller
     func dismissSelf() {
         if let navController = self.navigationController {
+            APSocketManager.sharedInstance.closeConnection()
             navController.popViewController(animated: true)
         }
     }
     
     func composeMessage(type: MessageType, content: Any)  {
         let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
-        Message.send(message: message, toID: self.currentUser!.id, completion: {(_) in
+        Message.send(message: message, toID: self.ticketID, completion: {(_) in
         })
     }
     
@@ -202,7 +203,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         case .sender:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! SenderCell
             cell.clearCellData()
-//            cell.profilePic.image = self.currentUser?.profilePic
+            cell.profilePic.image = self.currentUser?.profilePic
             switch self.items[indexPath.row].type {
             case .text:
                 cell.message.text = self.items[indexPath.row].content as! String
@@ -278,6 +279,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     //MARK: ViewController lifecycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        APSocketManager.sharedInstance.establishConnection()
         self.inputBar.backgroundColor = UIColor.clear
         self.view.layoutIfNeeded()
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.showKeyboard(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)

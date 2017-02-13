@@ -16,6 +16,8 @@ enum Router: URLRequestConvertible {
     case Ping()
     case AddTicket([String: AnyObject])
     case GetTickets()
+    case GetUser([String: AnyObject])
+    case GetMessages(String)
     var method: Alamofire.HTTPMethod {
         switch self {
         case .Register:
@@ -27,6 +29,10 @@ enum Router: URLRequestConvertible {
         case .AddTicket:
             return .post
         case .GetTickets:
+            return .get
+        case .GetUser:
+            return .get
+        case .GetMessages:
             return .get
         }
     }
@@ -52,6 +58,10 @@ enum Router: URLRequestConvertible {
             return "/api/ticket"
         case .GetTickets:
             return "/api/tickets"
+        case .GetUser:
+            return "/api/userinfo"
+        case .GetMessages(let id):
+            return "api/tickets/\(id)/conversation"
         }
     }
     
@@ -68,6 +78,8 @@ enum Router: URLRequestConvertible {
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
         case .AddTicket(let params):
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
+        case .GetUser(let params):
+            return try Alamofire.URLEncoding.queryString.encode(urlRequest, with: params)
         default:
             return urlRequest
         }

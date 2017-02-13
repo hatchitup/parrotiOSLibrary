@@ -10,49 +10,25 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var alertBottomConstraint: NSLayoutConstraint!
     lazy var leftButton: UIBarButtonItem = {
         let image = UIImage.init(named: "back", in: AskParrotUI.getBundle(), compatibleWith: nil)?.withRenderingMode(.alwaysOriginal)
-        let button  = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(ConversationsVC.showProfile))
+        let button  = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(ConversationsVC.back))
         return button
     }()
     var items = [Conversation]()
+    var selectedTicket: String?
     var selectedUser: User?
-    
     //MARK: Methods
     func customization()  {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         //NavigationBar customization
         let navigationTitleFont = UIFont(name: "AvenirNext-Regular", size: 18)!
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: navigationTitleFont, NSForegroundColorAttributeName: UIColor.white]
-        // notification setup
-        NotificationCenter.default.addObserver(self, selector: #selector(self.pushToUserMesssages(notification:)), name: NSNotification.Name(rawValue: "showUserMessages"), object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.showEmailAlert), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
         //right bar button
         let icon = UIImage.init(named: "compose", in: AskParrotUI.getBundle(), compatibleWith: nil)?.withRenderingMode(.alwaysOriginal)
-//            UIImage.init(named: "adress-book")
-//        ?.withRenderingMode(.alwaysOriginal)
         let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(ConversationsVC.showContacts))
         self.navigationItem.rightBarButtonItem = rightButton
         //left bar button image fetching
         self.navigationItem.leftBarButtonItem = self.leftButton
         self.tableView.tableFooterView = UIView.init(frame: CGRect.zero)
-//        if let id = FIRAuth.auth()?.currentUser?.uid {
-//            User.info(forUserID: id, completion: { [weak weakSelf = self] (user) in
-//                let image = user.profilePic
-//                let contentSize = CGSize.init(width: 30, height: 30)
-//                UIGraphicsBeginImageContextWithOptions(contentSize, false, 0.0)
-//                let _  = UIBezierPath.init(roundedRect: CGRect.init(origin: CGPoint.zero, size: contentSize), cornerRadius: 14).addClip()
-//                image.draw(in: CGRect(origin: CGPoint.zero, size: contentSize))
-//                let path = UIBezierPath.init(roundedRect: CGRect.init(origin: CGPoint.zero, size: contentSize), cornerRadius: 14)
-//                path.lineWidth = 2
-//                UIColor.white.setStroke()
-//                path.stroke()
-//                let finalImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(.alwaysOriginal)
-//                UIGraphicsEndImageContext()
-//                DispatchQueue.main.async {
-//                    weakSelf?.leftButton.image = finalImage
-//                    weakSelf = nil
-//                }
-//            })
-//        }
     }
     
     //Downloads conversations
@@ -72,53 +48,32 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    //Shows profile extra view
-    func showProfile() {
-//        let info = ["viewType" : ShowExtraView.profile]
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-        self.navigationController?.popViewController(animated: true)
-        self.inputView?.isHidden = true
+    //Go back
+    func back() {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
     }
     
     //Shows contacts extra view
     func showContacts() {
-//        let info = ["viewType" : ShowExtraView.contacts]
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
         self.performSegue(withIdentifier: "toTicket", sender: self)
     }
     
-    //Show EmailVerification on the bottom
-//    func showEmailAlert() {
-//        User.checkUserVerification {[weak weakSelf = self] (status) in
-//            status == true ? (weakSelf?.alertBottomConstraint.constant = -40) : (weakSelf?.alertBottomConstraint.constant = 0)
-//            UIView.animate(withDuration: 0.3) {
-//                weakSelf?.view.layoutIfNeeded()
-//                weakSelf = nil
-//            }
-//        }
-//    }
-    
-    //Shows Chat viewcontroller with given user
-    func pushToUserMesssages(notification: NSNotification) {
-        if let user = notification.userInfo?["user"] as? User {
-            self.selectedUser = user
-            self.performSegue(withIdentifier: "segue", sender: self)
-        }
-    }
-    
     func playSound()  {
-        var soundURL: NSURL?
-        var soundID:SystemSoundID = 0
-        let filePath = Bundle.main.path(forResource: "newMessage", ofType: "wav")
-        soundURL = NSURL(fileURLWithPath: filePath!)
-        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-        AudioServicesPlaySystemSound(soundID)
+//        var soundURL: NSURL?
+//        var soundID:SystemSoundID = 0
+//        let filePath = AskParrotUI.getBundle().path(forResource: "newMessage", ofType: "wav")
+//        soundURL = NSURL(fileURLWithPath: filePath!)
+//        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+//        AudioServicesPlaySystemSound(soundID)
     }
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue" {
             let vc = segue.destination as! ChatVC
+            vc.ticketID = self.selectedTicket
             vc.currentUser = self.selectedUser
         }
     }
@@ -152,7 +107,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ConversationsTBCell
             cell.clearCellData()
-//            cell.profilePic.image = self.items[indexPath.row].user.profilePic
+            cell.profilePic.image = self.items[indexPath.row].user.profilePic
             cell.nameLabel.text = self.items[indexPath.row].user.name
             switch self.items[indexPath.row].lastMessage.type {
             case .text:
@@ -181,6 +136,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.items.count > 0 {
+            self.selectedTicket = self.items[indexPath.row].ticket
             self.selectedUser = self.items[indexPath.row].user
             self.performSegue(withIdentifier: "segue", sender: self)
         }
@@ -191,12 +147,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         self.customization()
         self.fetchData()
-        APSocketManager.sharedInstance.establishConnection()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.showEmailAlert()
     }
     
     override func viewWillAppear(_ animated: Bool) {
