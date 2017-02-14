@@ -40,6 +40,7 @@
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89A0A95F9F7C0D70F353ABAD4F8ADD /* Request.swift */; };
 		5434031C1E4F519E00A07BE0 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434031B1E4F519E00A07BE0 /* Tickets.swift */; };
 		5434031E1E4F553300A07BE0 /* newMessage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5434031D1E4F553300A07BE0 /* newMessage.wav */; };
+		546F27881E53185700C3C8E8 /* CallMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546F27871E53185700C3C8E8 /* CallMeViewController.swift */; };
 		5484A1971E51C06A00B09F5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484A1961E51C06A00B09F5A /* User.swift */; };
 		59FFDF1E749BA58BDCACEEF7465BADD0 /* Pods-AskParrot_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CD5625D37DB32F68580BE7771D1773D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F969FD0179CB39462A220DF0862F7 /* Foundation.framework */; };
@@ -229,6 +230,7 @@
 		51ED3EB9018EA8E07FF6F5CE87429C1C /* SwiftSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSocket-dummy.m"; sourceTree = "<group>"; };
 		5434031B1E4F519E00A07BE0 /* Tickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
 		5434031D1E4F553300A07BE0 /* newMessage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = newMessage.wav; sourceTree = "<group>"; };
+		546F27871E53185700C3C8E8 /* CallMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallMeViewController.swift; sourceTree = "<group>"; };
 		5484A1961E51C06A00B09F5A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AD9FB60FFEB2F744175B24F8885E096 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		5C312863B8F095F75C9551D47C2F2DF5 /* AskParrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AskParrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -638,6 +640,7 @@
 				EB4D9F8546C5BB35C4784B03D5BCB88A /* ConversationsVC.swift */,
 				8FBE88813E94143514CD2E99AD58FD40 /* HelpDeskViewController.swift */,
 				A749D8DDB9D65399347EF33C62681909 /* VCCells.swift */,
+				546F27871E53185700C3C8E8 /* CallMeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1072,6 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546F27881E53185700C3C8E8 /* CallMeViewController.swift in Sources */,
 				84F1928A607A173F282A19869569A6DE /* AlertFactory.swift in Sources */,
 				B5EA62B90909009EDFC1B7FD0EBD1C29 /* APLoginViewController.swift in Sources */,
 				297801E419E4FCFC33A6DA6FE5401FA1 /* APQuery.swift in Sources */,

@@ -17,6 +17,11 @@ public class HelpDeskViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var table: UITableView!
+    lazy var leftButton: UIBarButtonItem = {
+        let image = UIImage.init(named: "default profile")?.withRenderingMode(.alwaysOriginal)
+        let button  = UIBarButtonItem.init(customView: UIImageView.init(image: image))
+        return button
+    }()
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -41,6 +46,25 @@ public class HelpDeskViewController: UIViewController {
                 }
         }
         self.title = AskParrotUI.config.appName
+        if let id = PersistencyManager.getUser().id {
+            User.info(forUserID: id, completion: { [weak weakSelf = self] (user) in
+                let image = user.profilePic
+                let contentSize = CGSize.init(width: 30, height: 30)
+                UIGraphicsBeginImageContextWithOptions(contentSize, false, 0.0)
+                let _  = UIBezierPath.init(roundedRect: CGRect.init(origin: CGPoint.zero, size: contentSize), cornerRadius: 14).addClip()
+                image.draw(in: CGRect(origin: CGPoint.zero, size: contentSize))
+                let path = UIBezierPath.init(roundedRect: CGRect.init(origin: CGPoint.zero, size: contentSize), cornerRadius: 14)
+                path.lineWidth = 2
+                UIColor.white.setStroke()
+                path.stroke()
+                let finalImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(.alwaysOriginal)
+                UIGraphicsEndImageContext()
+                DispatchQueue.main.async {
+                    weakSelf?.leftButton.image = finalImage
+                    weakSelf = nil
+                }
+            })
+        }
         applyConfiguration(config: AskParrotUI.config)
     }
     public override func viewWillAppear(_ animated: Bool) {

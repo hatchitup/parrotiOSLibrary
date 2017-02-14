@@ -11,4 +11,10 @@ class AlertFactory {
         alert.addAction(action)
         caller.present(alert, animated:true, completion: nil)
     }
+    static func successAlert(caller: UIViewController, msg: String) {
+        let alert = UIAlertController(title: "Success!", message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(action)
+        caller.present(alert, animated:true, completion: nil)
+    }
 }

@@ -39,7 +39,7 @@ class APLoginViewController: UIViewController {
 
     @IBAction func submitAction(_ sender: UIButton) {
         activityIndicator.startAnimating()
-        if user.name != nil && user.name != "" {
+        if user.name != nil {
            raiseTicket()
         }
         else {
