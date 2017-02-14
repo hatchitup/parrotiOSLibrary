@@ -7,6 +7,7 @@ import CoreLocation
 class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
     
     //MARK: Properties
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var inputBar: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
@@ -50,6 +51,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
             weakSelf?.items.append(message)
             weakSelf?.items.sort{ $0.timestamp < $1.timestamp }
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 if let state = weakSelf?.items.isEmpty, state == false {
                     weakSelf?.tableView.reloadData()
                     weakSelf?.tableView.scrollToRow(at: IndexPath.init(row: self.items.count - 1, section: 0), at: .bottom, animated: false)

@@ -18,6 +18,7 @@ class APLoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var queryField: UITextView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var user : APUser!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class APLoginViewController: UIViewController {
         phoneField.text = user.phone
         emailField.text = user.email
         locationField.text = user.location
-        
+        activityIndicator.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +38,7 @@ class APLoginViewController: UIViewController {
     }
 
     @IBAction func submitAction(_ sender: UIButton) {
+        activityIndicator.startAnimating()
         if user.name != nil && user.name != "" {
            raiseTicket()
         }
@@ -47,19 +49,22 @@ class APLoginViewController: UIViewController {
             let payload = dict as! [String: AnyObject]
             Alamofire.request(Router.Register(payload)).responseJSON(completionHandler:
                 { (response) in
+                       DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()}
                     switch response.result {
                     case .success(let value):
                         let json = JSON(value)
                         print("JSON: \(json)")
                         let token = json["data"]["authToken"].stringValue
                         AskParrotUI.setToken(token: token)
-                        
                         if self.queryField.isNotEmpty() {
                         self.raiseTicket()
                         }
                         else {
                             AskParrotUI.parrotPing()
+                               DispatchQueue.main.async {
                             self.popViewController()
+                            }
                         }
                     case .failure(let error):
                         print(error)
@@ -71,16 +76,23 @@ class APLoginViewController: UIViewController {
     }
     func raiseTicket(){
         let ticket = APQuery.init(msg: self.queryField.text!)
-        Alamofire.request(Router.AddTicket(ticket.toDictionary() as! [String: AnyObject])).responseJSON(completionHandler: { (response) in
+        Alamofire.request(Router.AddTicket(ticket.toDictionary() as! [String: AnyObject])).responseJSON(completionHandler: {
+            (response) in
+               DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()}
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
                 AskParrotUI.parrotPing()
+                   DispatchQueue.main.async {
                  self.popViewController()
+                }
             case .failure(let error):
                 print(error)
+                   DispatchQueue.main.async {
                 AlertFactory.defaultAlert(caller: self)
+                }
             }
         })
     }

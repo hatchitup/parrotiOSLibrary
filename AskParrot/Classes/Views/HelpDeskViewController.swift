@@ -14,7 +14,7 @@ public class HelpDeskViewController: UIViewController {
 
     private var ID : String!
     fileprivate var datasource : FAQModel! = FAQModel()
-   
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var table: UITableView!
     override public func viewDidLoad() {
@@ -25,6 +25,8 @@ public class HelpDeskViewController: UIViewController {
         table.rowHeight = UITableViewAutomaticDimension
         table.estimatedRowHeight = 80
             Alamofire.request(Router.FAQs()).responseJSON { (response) in
+                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()}
                 switch response.result {
                 case .success:
                     print(JSON(response.data))

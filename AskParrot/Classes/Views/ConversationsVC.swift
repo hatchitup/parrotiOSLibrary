@@ -6,6 +6,7 @@ import AudioToolbox
 class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Properties
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var alertBottomConstraint: NSLayoutConstraint!
     lazy var leftButton: UIBarButtonItem = {
@@ -37,6 +38,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.items = conversations
             self.items.sort{ $0.lastMessage.timestamp > $1.lastMessage.timestamp }
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
                 for conversation in self.items {
                     if conversation.lastMessage.isRead == false {
@@ -146,8 +148,6 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
-        self.fetchData()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -156,6 +156,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         self.fetchData()
         if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
         }
