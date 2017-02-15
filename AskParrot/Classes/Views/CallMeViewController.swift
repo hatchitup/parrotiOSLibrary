@@ -39,6 +39,7 @@ class CallMeViewController: UIViewController {
                     print("JSON: \(json)")
                     DispatchQueue.main.async
                     {
+                    self.view.endEditing(true)
                     AlertFactory.successAlert(caller: self, msg: json["data"]["userMessage"].stringValue)
                         
                     }
