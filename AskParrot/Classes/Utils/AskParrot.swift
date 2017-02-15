@@ -7,21 +7,31 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
-
-public class AskParrot {
+class AskParrot {
 
     static let defaults: UserDefaults = UserDefaults(suiteName: "com.askparrot")!
     
-   
-     static func isPad() -> Bool {
-        
-        return UIDevice.current.userInterfaceIdiom == .pad
+    static func parrotPing(){
+        Alamofire.request(Router.Ping()).responseJSON(completionHandler: { (response) in
+            switch response.result {
+            case .success:
+                let user = APUser.init(fromJson: JSON(response.data))
+                AskParrot.setToken(token: user.authToken)
+                PersistencyManager.saveUser(user: user)
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
-    
-     static func isPhone() -> Bool {
-        
-        return UIDevice.current.userInterfaceIdiom == .phone
+    public static func setToken(token: String){
+        defaults.set(token, forKey: APUDKeys.tokenKey.rawValue)
+        defaults.synchronize()
+    }
+    public static func getToken() -> String {
+        return defaults.string(forKey: APUDKeys.tokenKey.rawValue) ?? ""
     }
 }
 enum APUDKeys : String {

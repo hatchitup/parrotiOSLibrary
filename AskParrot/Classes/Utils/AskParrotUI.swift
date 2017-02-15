@@ -8,13 +8,10 @@
 
 import Foundation
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 public class AskParrotUI {
     
     static let expectedConfigVersion = 1
-    static let defaults: UserDefaults = UserDefaults(suiteName: "com.askparrot")!
     static var config = Config()
     public init() {
     }
@@ -28,30 +25,13 @@ public class AskParrotUI {
                 print("could not load config file! Error: \(error)")
             }
         }
-        if AskParrotUI.getToken() != "" {
-            parrotPing()
+        if AskParrot.getToken() != "" {
+            AskParrot.parrotPing()
             
         }
     }
-    public static func parrotPing(){
-        Alamofire.request(Router.Ping()).responseJSON(completionHandler: { (response) in
-            switch response.result {
-            case .success:
-                let user = APUser.init(fromJson: JSON(response.data))
-                AskParrotUI.setToken(token: user.authToken)
-                PersistencyManager.saveUser(user: user)
-            case .failure(let error):
-                print(error)
-            }
-        })
-    }
-    public static func setToken(token: String){
-        defaults.set(token, forKey: APUDKeys.tokenKey.rawValue)
-        defaults.synchronize()
-    }
-    public static func getToken() -> String {
-       return defaults.string(forKey: APUDKeys.tokenKey.rawValue) ?? ""
-    }
+     
+    
     /**
      performs segue to AskParrot HelpDesk screen
      - Parameter caller: calling UIViewController
@@ -82,14 +62,5 @@ public class AskParrotUI {
         let podBundle = Bundle(for: HelpDeskViewController.self)
         let bundleURL = podBundle.url(forResource: "AskParrot", withExtension: "bundle")
         return Bundle(url: bundleURL!)!
-    }
-    static func isPad() -> Bool {
-        
-        return UIDevice.current.userInterfaceIdiom == .pad
-    }
-    
-    static func isPhone() -> Bool {
-        
-        return UIDevice.current.userInterfaceIdiom == .phone
     }
 }

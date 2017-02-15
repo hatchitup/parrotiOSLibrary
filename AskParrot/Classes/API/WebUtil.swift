@@ -46,7 +46,7 @@ enum Router: URLRequestConvertible {
         case .FAQs:
             return AskParrotUI.config.appID
         default:
-            return AskParrotUI.getToken()
+            return AskParrot.getToken()
         }
     }
     var path: String {

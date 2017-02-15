@@ -14,10 +14,10 @@ import SwiftSocket
 class APSocketManager: NSObject {
 
     static let sharedInstance = APSocketManager()
-    var socket: SocketIOClient! = SocketIOClient(socketURL: NSURL(string: Router.baseURLString )! as URL, config:  [.path("/api/ws"),.log(true), .forcePolling(true),.extraHeaders(["Authorization": ("Bearer " + AskParrotUI.getToken())])])
+    var socket: SocketIOClient! = SocketIOClient(socketURL: NSURL(string: Router.baseURLString )! as URL, config:  [.path("/api/ws"),.log(true), .forcePolling(true),.extraHeaders(["Authorization": ("Bearer " + AskParrot.getToken())])])
     override init() {
         super.init()
-        print(AskParrotUI.getToken())
+        print(AskParrot.getToken())
     }
     
     func establishConnection() {
@@ -26,7 +26,7 @@ class APSocketManager: NSObject {
         }
         else{
             socket = SocketIOClient(socketURL: NSURL(string: Router.baseURLString)! as URL, config: [.path("/api/ws"), .log(true), .forcePolling(true),
-                    .extraHeaders(["Authorization": ("Bearer " + AskParrotUI.getToken())])])
+                    .extraHeaders(["Authorization": ("Bearer " + AskParrot.getToken())])])
 
             socket.connect()
         }

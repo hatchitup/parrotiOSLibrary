@@ -56,12 +56,12 @@ class APLoginViewController: UIViewController {
                         let json = JSON(value)
                         print("JSON: \(json)")
                         let token = json["data"]["authToken"].stringValue
-                        AskParrotUI.setToken(token: token)
+                        AskParrot.setToken(token: token)
                         if self.queryField.isNotEmpty() {
                         self.raiseTicket()
                         }
                         else {
-                            AskParrotUI.parrotPing()
+                            AskParrot.parrotPing()
                                DispatchQueue.main.async {
                             self.popViewController()
                             }
@@ -84,7 +84,7 @@ class APLoginViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
-                AskParrotUI.parrotPing()
+                AskParrot.parrotPing()
                    DispatchQueue.main.async {
                  self.popViewController()
                 }
