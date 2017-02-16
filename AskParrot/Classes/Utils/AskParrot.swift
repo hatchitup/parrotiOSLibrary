@@ -15,10 +15,11 @@ class AskParrot {
     static let defaults: UserDefaults = UserDefaults(suiteName: "com.askparrot")!
     
     static func parrotPing(){
-        Alamofire.request(Router.Ping()).responseJSON(completionHandler: { (response) in
+        Alamofire.request(Router.Ping()).responseSwiftyJSON(completionHandler: { (response) in
             switch response.result {
-            case .success:
-                let user = APUser.init(fromJson: JSON(response.data))
+            case .success(let json):
+                print(json)
+                let user = APUser.init(fromJson: json)
                 AskParrot.setToken(token: user.authToken)
                 PersistencyManager.saveUser(user: user)
             case .failure(let error):

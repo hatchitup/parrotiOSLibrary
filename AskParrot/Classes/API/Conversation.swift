@@ -14,10 +14,9 @@ var lastMessage: Message
 //MARK: Methods
 class func showConversations(completion: @escaping ([Conversation]) -> Swift.Void) {
     var conversations = [Conversation]()
-    Alamofire.request(Router.GetTickets()).responseJSON { (response) in
+    Alamofire.request(Router.GetTickets()).responseSwiftyJSON { (response) in
         switch response.result {
-        case .success(let value):
-            let json = JSON(value)
+        case .success(let json):
             print("JSON: \(json)")
             if json["data"].arrayValue.count > 0 {
                 for conv in json["data"].arrayValue {

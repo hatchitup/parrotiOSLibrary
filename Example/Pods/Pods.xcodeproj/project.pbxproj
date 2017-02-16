@@ -42,6 +42,7 @@
 		5434031E1E4F553300A07BE0 /* newMessage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5434031D1E4F553300A07BE0 /* newMessage.wav */; };
 		546F27881E53185700C3C8E8 /* CallMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546F27871E53185700C3C8E8 /* CallMeViewController.swift */; };
 		5484A1971E51C06A00B09F5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484A1961E51C06A00B09F5A /* User.swift */; };
+		54D72D2A1E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D72D291E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift */; };
 		59FFDF1E749BA58BDCACEEF7465BADD0 /* Pods-AskParrot_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CD5625D37DB32F68580BE7771D1773D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F969FD0179CB39462A220DF0862F7 /* Foundation.framework */; };
 		603B014BEA369E2C68ED71E0C08F819D /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E058DA5602AAB505B9CAE87A635F774 /* Socket.swift */; };
@@ -232,6 +233,7 @@
 		5434031D1E4F553300A07BE0 /* newMessage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = newMessage.wav; sourceTree = "<group>"; };
 		546F27871E53185700C3C8E8 /* CallMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallMeViewController.swift; sourceTree = "<group>"; };
 		5484A1961E51C06A00B09F5A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		54D72D291E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		5AD9FB60FFEB2F744175B24F8885E096 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		5C312863B8F095F75C9551D47C2F2DF5 /* AskParrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AskParrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D937A97C073292DFBCF8A95BF5414D0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,6 +424,7 @@
 		072F3C0C7DD7227C53A6BFBD89990346 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				54D72D291E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift */,
 				5484A1961E51C06A00B09F5A /* User.swift */,
 				14FD7669597ED91C1E68700089F92A0D /* APQuery.swift */,
 				31EB0F51429475E989B5594D66D3CDA7 /* APSocketManager.swift */,
@@ -1088,6 +1091,7 @@
 				AF89AF35539B586AC3F3AEEF9712890F /* ColorUtil.swift in Sources */,
 				7A73810288ADA9BF0EF62882473A22B7 /* Config.swift in Sources */,
 				966DACE88E5C139054AF253DA764B5F3 /* ConfigParser.swift in Sources */,
+				54D72D2A1E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift in Sources */,
 				CB2837426AF228568FE393ADA102B547 /* Conversation.swift in Sources */,
 				2BF6F4500D40C4A91CCBC0526397221B /* ConversationsVC.swift in Sources */,
 				A46F57C3C8F75D7C16D2B018E95ED370 /* FAQModel.swift in Sources */,

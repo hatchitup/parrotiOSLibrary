@@ -20,10 +20,9 @@ class Message {
     
     //MARK: Methods
     class func downloadAllMessages(forTicketID: String, completion: @escaping (Message) -> Swift.Void) {
-           Alamofire.request(Router.GetMessages(forTicketID)).responseJSON(completionHandler: { (response) in
+           Alamofire.request(Router.GetMessages(forTicketID)).responseSwiftyJSON(completionHandler: { (response) in
             switch response.result {
-            case .success(let value):
-                let json = JSON(value)
+            case .success(let json):
                 print("JSON: \(json)")
                 for msg in json["data"].arrayValue {
                 let message = Message.init(type: .text, content: "loading", owner: .sender, timestamp: 0, isRead: true)

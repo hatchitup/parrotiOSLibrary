@@ -47,13 +47,12 @@ class APLoginViewController: UIViewController {
             let u = APUser.init(name: nameField.text!, phone: phoneField.text!, email: emailField.text!, location: locationField.text!)
             let dict = u.toDictionary()
             let payload = dict as! [String: AnyObject]
-            Alamofire.request(Router.Register(payload)).responseJSON(completionHandler:
+            Alamofire.request(Router.Register(payload)).responseSwiftyJSON(completionHandler:
                 { (response) in
                        DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()}
                     switch response.result {
-                    case .success(let value):
-                        let json = JSON(value)
+                    case .success(let json):
                         print("JSON: \(json)")
                         let token = json["data"]["authToken"].stringValue
                         AskParrot.setToken(token: token)
@@ -76,13 +75,12 @@ class APLoginViewController: UIViewController {
     }
     func raiseTicket(){
         let ticket = APQuery.init(msg: self.queryField.text!)
-        Alamofire.request(Router.AddTicket(ticket.toDictionary() as! [String: AnyObject])).responseJSON(completionHandler: {
+        Alamofire.request(Router.AddTicket(ticket.toDictionary() as! [String: AnyObject])).responseSwiftyJSON(completionHandler: {
             (response) in
                DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()}
             switch response.result {
-            case .success(let value):
-                let json = JSON(value)
+            case .success(let json):
                 print("JSON: \(json)")
                 AskParrot.parrotPing()
                    DispatchQueue.main.async {

@@ -32,10 +32,10 @@ class CallMeViewController: UIViewController {
     @IBAction func requestCallAction(_ sender: UIButton) {
         if phoneField.isNotEmpty()  {
             let payload = callQuery.init(phone: phoneField.text!)
-            Alamofire.request(Router.RequestCall(payload.toDictionary() as! [String : AnyObject])).responseJSON(completionHandler: { (response) in
+            Alamofire.request(Router.RequestCall(payload.toDictionary() as! [String : AnyObject])).responseSwiftyJSON(completionHandler: { (response) in
                 switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
+                case .success(let json):
+                    
                     print("JSON: \(json)")
                     DispatchQueue.main.async
                     {

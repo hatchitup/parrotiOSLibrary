@@ -29,14 +29,14 @@ public class HelpDeskViewController: UIViewController {
         // Do any additional setup after loading the view.
         table.rowHeight = UITableViewAutomaticDimension
         table.estimatedRowHeight = 80
-            Alamofire.request(Router.FAQs()).responseJSON { (response) in
+            Alamofire.request(Router.FAQs()).responseSwiftyJSON { (response) in
                  DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()}
                 switch response.result {
-                case .success:
-                    print(JSON(response.data))
+                case .success(let json):
+                    print(json)
                     do {
-                        self.datasource = FAQModel.init(fromJson: JSON(response.data))
+                        self.datasource = FAQModel.init(fromJson: json)
                         self.table.reloadData()
                     } catch let error as NSError {
                         print(error)
@@ -67,6 +67,10 @@ public class HelpDeskViewController: UIViewController {
         }
         applyConfiguration(config: AskParrotUI.config)
     }
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        self.searchBar.endEditing(true)
+    }
     public override func viewWillAppear(_ animated: Bool) {
         let n = self.navigationController!.viewControllers.count - 2
         if n < 0 {
@@ -76,9 +80,7 @@ public class HelpDeskViewController: UIViewController {
         }
 //       AppIcon
     }
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+    
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -120,8 +122,6 @@ extension HelpDeskViewController : UITableViewDelegate, UITableViewDataSource {
         cell.answerLabel.text = datasource.data[indexPath.row].answer
         return cell
     }
-    
-   
 }
  class faqCell: UITableViewCell {
     
