@@ -35,7 +35,6 @@ class CallMeViewController: UIViewController {
             Alamofire.request(Router.RequestCall(payload.toDictionary() as! [String : AnyObject])).responseSwiftyJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success(let json):
-                    
                     print("JSON: \(json)")
                     DispatchQueue.main.async
                     {

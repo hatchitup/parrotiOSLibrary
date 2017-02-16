@@ -8,8 +8,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class APLoginViewController: UIViewController {
 
@@ -45,55 +43,43 @@ class APLoginViewController: UIViewController {
         else {
             if nameField.isNotEmpty() && emailField.isNotEmpty() && locationField.isNotEmpty()  && phoneField.isNotEmpty() {
             let u = APUser.init(name: nameField.text!, phone: phoneField.text!, email: emailField.text!, location: locationField.text!)
-            let dict = u.toDictionary()
-            let payload = dict as! [String: AnyObject]
-            Alamofire.request(Router.Register(payload)).responseSwiftyJSON(completionHandler:
-                { (response) in
-                       DispatchQueue.main.async {
-                        self.activityIndicator.stopAnimating()}
-                    switch response.result {
-                    case .success(let json):
-                        print("JSON: \(json)")
-                        let token = json["data"]["authToken"].stringValue
-                        AskParrot.setToken(token: token)
-                        if self.queryField.isNotEmpty() {
+            u.registerUser(completion: { (result) in
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()}
+                switch result {
+                case true:
+                    if self.queryField.isNotEmpty() {
                         self.raiseTicket()
-                        }
-                        else {
-                            AskParrot.parrotPing()
-                               DispatchQueue.main.async {
-                            self.popViewController()
-                            }
-                        }
-                    case .failure(let error):
-                        print(error)
-                        AlertFactory.defaultAlert(caller: self)
                     }
+                    else {
+                        AskParrot.parrotPing()
+                        DispatchQueue.main.async {
+                            self.popViewController()
+                        }
+                    }
+                case false:
+                    AlertFactory.defaultAlert(caller: self)
+                }
             })
         }
             }
     }
     func raiseTicket(){
-        let ticket = APQuery.init(msg: self.queryField.text!)
-        Alamofire.request(Router.AddTicket(ticket.toDictionary() as! [String: AnyObject])).responseSwiftyJSON(completionHandler: {
-            (response) in
-               DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()}
-            switch response.result {
-            case .success(let json):
-                print("JSON: \(json)")
+        APTicket.raiseTicket(text: self.queryField.text!) { (result) in
+            switch result {
+            case true:
                 AskParrot.parrotPing()
-                   DispatchQueue.main.async {
-                 self.popViewController()
+                DispatchQueue.main.async {
+                    self.popViewController()
                 }
-            case .failure(let error):
-                print(error)
-                   DispatchQueue.main.async {
-                AlertFactory.defaultAlert(caller: self)
+            case false:
+                DispatchQueue.main.async {
+                    AlertFactory.defaultAlert(caller: self)
                 }
+ 
             }
-        })
-    }
+        }
+        }
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

@@ -22,7 +22,7 @@
 		1CD608F836AD91E5A62020D51A7BF7B8 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1FB5E6C0E2C8268175C1D2F6F00AD4 /* ChatVC.swift */; };
 		1D172FE02938817C892F7836B8A4684F /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749D8DDB9D65399347EF33C62681909 /* VCCells.swift */; };
 		1D271342A72F617DB7ABD074CDD3F273 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9850D9DFD18D1C76663AB1EF0A85D983 /* Result.swift */; };
-		297801E419E4FCFC33A6DA6FE5401FA1 /* APQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD7669597ED91C1E68700089F92A0D /* APQuery.swift */; };
+		297801E419E4FCFC33A6DA6FE5401FA1 /* APTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD7669597ED91C1E68700089F92A0D /* APTicket.swift */; };
 		2BF6F4500D40C4A91CCBC0526397221B /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D9F8546C5BB35C4784B03D5BCB88A /* ConversationsVC.swift */; };
 		2D67EE66F9F49D2A27D7C3E1972AB3E9 /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968FB7D8AF09ABED5453E8329FE3EF9 /* SocketParsable.swift */; };
 		2E4B112CE59ED8C9F3A9E85B20C5F98A /* APSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EB0F51429475E989B5594D66D3CDA7 /* APSocketManager.swift */; };
@@ -204,7 +204,7 @@
 		0E2671E0028FDE758D92561CB8A3BBCA /* SocketPacket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketPacket.swift; path = Source/SocketPacket.swift; sourceTree = "<group>"; };
 		10794993062648901B084F4A3ADFA9E1 /* Pods-AskParrot_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AskParrot_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		122C6091F87B25E677745CF61BAB112A /* SwiftSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14FD7669597ED91C1E68700089F92A0D /* APQuery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APQuery.swift; sourceTree = "<group>"; };
+		14FD7669597ED91C1E68700089F92A0D /* APTicket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APTicket.swift; sourceTree = "<group>"; };
 		166E618E6325CC01E2C8BA41F88BE39A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		17926EEEA068E02C00CBE7D7CAB02E88 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		18EFBFC07CCDAAC8F78E0F5CFA037D5C /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
@@ -426,7 +426,7 @@
 			children = (
 				54D72D291E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift */,
 				5484A1961E51C06A00B09F5A /* User.swift */,
-				14FD7669597ED91C1E68700089F92A0D /* APQuery.swift */,
+				14FD7669597ED91C1E68700089F92A0D /* APTicket.swift */,
 				31EB0F51429475E989B5594D66D3CDA7 /* APSocketManager.swift */,
 				87C7DEFBC5214D9FEA41977ED7D9714A /* Conversation.swift */,
 				DABBF047D270433907B43265F906A473 /* FAQModel.swift */,
@@ -1081,7 +1081,7 @@
 				546F27881E53185700C3C8E8 /* CallMeViewController.swift in Sources */,
 				84F1928A607A173F282A19869569A6DE /* AlertFactory.swift in Sources */,
 				B5EA62B90909009EDFC1B7FD0EBD1C29 /* APLoginViewController.swift in Sources */,
-				297801E419E4FCFC33A6DA6FE5401FA1 /* APQuery.swift in Sources */,
+				297801E419E4FCFC33A6DA6FE5401FA1 /* APTicket.swift in Sources */,
 				2E4B112CE59ED8C9F3A9E85B20C5F98A /* APSocketManager.swift in Sources */,
 				E70BFF39E04B24DF20F31C015D4FB748 /* AskParrot-dummy.m in Sources */,
 				CC0C0C1C8DEF214B12685262D7FE1234 /* AskParrot.swift in Sources */,

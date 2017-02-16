@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
-class APQuery : NSObject, NSCoding{
+class APTicket : NSObject, NSCoding{
     
     var message : String!
     var title : String!
@@ -29,7 +30,19 @@ class APQuery : NSObject, NSCoding{
         message = json["message"].stringValue
         title = json["title"].stringValue
     }
-    
+    class func raiseTicket(text: String, completion: @escaping (Bool) -> Swift.Void) {
+        Alamofire.request(Router.AddTicket(APTicket.init(msg: text).toDictionary() as! [String : AnyObject])).responseSwiftyJSON(completionHandler:
+            { (response) in
+                switch response.result {
+                case .success(let json):
+                    print("JSON: \(json)")
+                    completion(true)
+                case .failure(let error):
+                    print(error)
+                    completion(false)
+                }
+        })
+    }
     /**
      * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
      */

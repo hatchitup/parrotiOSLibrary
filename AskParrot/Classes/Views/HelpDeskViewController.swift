@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 public class HelpDeskViewController: UIViewController {
 
@@ -30,22 +29,7 @@ public class HelpDeskViewController: UIViewController {
         table.rowHeight = UITableViewAutomaticDimension
         table.estimatedRowHeight = 80
         searchBar.showsCancelButton = true
-            Alamofire.request(Router.FAQs()).responseSwiftyJSON { (response) in
-                 DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()}
-                switch response.result {
-                case .success(let json):
-                    print(json)
-                    do {
-                        self.datasource = FAQModel.init(fromJson: json)
-                        self.table.reloadData()
-                    } catch let error as NSError {
-                        print(error)
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-        }
+        getFAQs()
         self.title = AskParrotUI.config.appName
         if let id = PersistencyManager.getUser().id {
             User.info(forUserID: id, completion: { [weak weakSelf = self] (user) in
@@ -92,7 +76,14 @@ public class HelpDeskViewController: UIViewController {
         print("Unwind to Root View Controller")
         
     }
-    
+    func getFAQs() {
+        FAQ.showFAQs { (faqs) in
+            DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.table.reloadData()
+            }
+        }
+    }
     // MARK: - Navigation
      func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if segue.identifier == "loginPop" {

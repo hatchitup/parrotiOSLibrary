@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-
+import Alamofire
 class FAQModel: NSObject, NSCoding{
     
     var data : [FAQ]! = []
@@ -98,7 +98,24 @@ class FAQModel: NSObject, NSCoding{
         createdAt = json["createdAt"].stringValue
         id = json["id"].stringValue
     }
-    
+    //MARK: Methods
+    class func showFAQs(completion: @escaping ([FAQ]) -> Swift.Void) {
+        Alamofire.request(Router.FAQs()).responseSwiftyJSON { (response) in
+            switch response.result {
+            case .success(let json):
+                print(json)
+                do {
+                    completion(FAQModel.init(fromJson: json).data)
+                } catch let error as NSError {
+                    completion([])
+                    print(error)
+                }
+            case .failure(let error):
+                completion([])
+                print(error)
+            }
+        }
+    }
     /**
      * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
      */

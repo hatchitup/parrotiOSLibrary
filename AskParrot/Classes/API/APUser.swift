@@ -6,7 +6,7 @@
 //
 
 import SwiftyJSON
-
+import Alamofire
 
 class APUser : NSObject, NSCoding{
     
@@ -41,7 +41,21 @@ class APUser : NSObject, NSCoding{
         name = json["data"]["name"].stringValue
         phone = json["data"]["phone"].stringValue
     }
-    
+     func registerUser(completion: @escaping (Bool) -> Swift.Void) {
+        Alamofire.request(Router.Register(self.toDictionary() as! [String : AnyObject])).responseSwiftyJSON(completionHandler:
+            { (response) in
+                switch response.result {
+                case .success(let json):
+                    print("JSON: \(json)")
+                    let token = json["data"]["authToken"].stringValue
+                    AskParrot.setToken(token: token)
+                    completion(true)
+                case .failure(let error):
+                    print(error)
+                   completion(false)
+                }
+        })
+    }
     /**
      * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
      */
