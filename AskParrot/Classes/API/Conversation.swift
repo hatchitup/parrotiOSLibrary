@@ -31,6 +31,7 @@ class func showConversations(completion: @escaping ([Conversation]) -> Swift.Voi
                 }
             }
         case .failure(let error):
+            completion(conversations)
             print(error)
         }
     }

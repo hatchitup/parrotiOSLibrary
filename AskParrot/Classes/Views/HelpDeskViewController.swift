@@ -29,6 +29,7 @@ public class HelpDeskViewController: UIViewController {
         // Do any additional setup after loading the view.
         table.rowHeight = UITableViewAutomaticDimension
         table.estimatedRowHeight = 80
+        searchBar.showsCancelButton = true
             Alamofire.request(Router.FAQs()).responseSwiftyJSON { (response) in
                  DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()}
@@ -107,6 +108,11 @@ extension HelpDeskViewController : UISearchBarDelegate {
         if searchBar.text != "" {
             
         }
+    }
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.text = ""
+        self.view.endEditing(true)
     }
 }
 extension HelpDeskViewController : UITableViewDelegate, UITableViewDataSource {
