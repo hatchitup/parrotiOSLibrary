@@ -42,6 +42,7 @@
 		5434031E1E4F553300A07BE0 /* newMessage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5434031D1E4F553300A07BE0 /* newMessage.wav */; };
 		546F27881E53185700C3C8E8 /* CallMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546F27871E53185700C3C8E8 /* CallMeViewController.swift */; };
 		5484A1971E51C06A00B09F5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484A1961E51C06A00B09F5A /* User.swift */; };
+		54A9499F1E57301200EA0A01 /* AskParrotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A9499E1E57301200EA0A01 /* AskParrotAPI.swift */; };
 		54D72D2A1E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D72D291E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift */; };
 		59FFDF1E749BA58BDCACEEF7465BADD0 /* Pods-AskParrot_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6203FFCE13F4E6F9DE7DFACBE9EBD8EE /* Pods-AskParrot_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CD5625D37DB32F68580BE7771D1773D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F969FD0179CB39462A220DF0862F7 /* Foundation.framework */; };
@@ -233,6 +234,7 @@
 		5434031D1E4F553300A07BE0 /* newMessage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = newMessage.wav; sourceTree = "<group>"; };
 		546F27871E53185700C3C8E8 /* CallMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallMeViewController.swift; sourceTree = "<group>"; };
 		5484A1961E51C06A00B09F5A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		54A9499E1E57301200EA0A01 /* AskParrotAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskParrotAPI.swift; sourceTree = "<group>"; };
 		54D72D291E55CB3D00CBFD6E /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		5AD9FB60FFEB2F744175B24F8885E096 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		5C312863B8F095F75C9551D47C2F2DF5 /* AskParrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AskParrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -683,6 +685,7 @@
 				769D9A6FC09B6CEB3E27114DF810DE0A /* ConfigParser.swift */,
 				EC95DB432CB275CA3E458C634D497FC1 /* Helper Files.swift */,
 				6E2E51499E466F45911E6319418F1CB0 /* PersistencyManager.swift */,
+				54A9499E1E57301200EA0A01 /* AskParrotAPI.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1108,6 +1111,7 @@
 				4BC0C398BC782EA4D5711C74B488C91D /* APUser.swift in Sources */,
 				1D172FE02938817C892F7836B8A4684F /* VCCells.swift in Sources */,
 				4A2ECDCDE21373504DE0D301CE7E3F1B /* WebUtil.swift in Sources */,
+				54A9499F1E57301200EA0A01 /* AskParrotAPI.swift in Sources */,
 				5434031C1E4F519E00A07BE0 /* Tickets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
