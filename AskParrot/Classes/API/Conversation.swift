@@ -11,7 +11,7 @@ let user: User
 var ticket: String
 var lastMessage: Message
 
-//MARK: Methods
+//Mvar: Methods
 class func showConversations(completion: @escaping ([Conversation]) -> Swift.Void) {
     var conversations = [Conversation]()
     Alamofire.request(Router.GetTickets()).responseSwiftyJSON { (response) in

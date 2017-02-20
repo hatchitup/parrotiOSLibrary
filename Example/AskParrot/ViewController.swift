@@ -13,7 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+//        AskParrotAPI.requestCall(to: "918130456475", after: 30) { (res) in
+//            switch res {
+//            case .Error(let str):
+//                print(str)
+//            case .Success(let str):
+//                print(str)
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {

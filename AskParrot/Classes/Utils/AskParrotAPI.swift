@@ -13,7 +13,7 @@ import SwiftyJSON
 
 public class AskParrotAPI {
     
-    func requestCall(to: String, after:NSNumber, completion: @escaping (AskParrotResponse) -> Swift.Void)  {
+    public static func requestCall(to: String, after:NSNumber, completion: @escaping (AskParrotResponse) -> Swift.Void)  {
         Alamofire.request(Router.RequestCall(callQuery.init(phone: to).toDictionary() as! [String : AnyObject])).responseSwiftyJSON { (response) in
             switch response.result {
             case .success(let json):
@@ -31,7 +31,7 @@ public class AskParrotAPI {
         }
     }
 }
-enum AskParrotResponse {
+public enum AskParrotResponse {
     case Success(String)
     case Error(String)
 }
