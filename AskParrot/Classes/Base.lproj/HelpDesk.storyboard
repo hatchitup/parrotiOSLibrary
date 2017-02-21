@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hxz-kf-2Hg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hxz-kf-2Hg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -106,7 +106,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zEI-fH-3ld" id="8JI-H5-cJR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrK-tB-f3f">
@@ -192,8 +192,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atg-xQ-2Eu">
-                                <rect key="frame" x="16" y="58" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atg-xQ-2Eu">
+                                <rect key="frame" x="16" y="58" width="167.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -211,25 +211,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Till" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-Rn-7ob">
+                                <rect key="frame" x="191.5" y="58" width="167.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GeB-Rn-7ob" secondAttribute="trailing" constant="16" id="1Nz-Ss-Pbg"/>
                             <constraint firstItem="dJg-jz-GRG" firstAttribute="top" secondItem="atg-xQ-2Eu" secondAttribute="bottom" constant="12" id="3Nl-rV-r8d"/>
+                            <constraint firstItem="GeB-Rn-7ob" firstAttribute="leading" secondItem="atg-xQ-2Eu" secondAttribute="trailing" constant="8" id="7z9-fG-GOa"/>
                             <constraint firstItem="Z7e-Nk-qVo" firstAttribute="top" secondItem="2mu-O6-6Rz" secondAttribute="bottom" constant="20" id="9A8-OA-7BX"/>
                             <constraint firstAttribute="trailing" secondItem="Z7e-Nk-qVo" secondAttribute="trailing" constant="16" id="E08-oJ-q62"/>
-                            <constraint firstAttribute="trailing" secondItem="atg-xQ-2Eu" secondAttribute="trailing" constant="16" id="H3i-8G-I8Q"/>
                             <constraint firstItem="fdL-QU-paR" firstAttribute="centerX" secondItem="uTE-Oi-oi3" secondAttribute="centerX" id="J5K-L6-Kp3"/>
+                            <constraint firstItem="atg-xQ-2Eu" firstAttribute="width" secondItem="GeB-Rn-7ob" secondAttribute="width" id="QJZ-5o-EVl"/>
                             <constraint firstItem="dJg-jz-GRG" firstAttribute="centerX" secondItem="uTE-Oi-oi3" secondAttribute="centerX" id="QTO-mg-gDu"/>
                             <constraint firstItem="fdL-QU-paR" firstAttribute="top" secondItem="dJg-jz-GRG" secondAttribute="bottom" constant="12" id="TLe-Xy-YHM"/>
+                            <constraint firstItem="GeB-Rn-7ob" firstAttribute="top" secondItem="Z7e-Nk-qVo" secondAttribute="bottom" constant="8" id="VUR-5F-u7u"/>
                             <constraint firstItem="Z7e-Nk-qVo" firstAttribute="leading" secondItem="uTE-Oi-oi3" secondAttribute="leading" constant="16" id="bEJ-QB-SDn"/>
                             <constraint firstItem="atg-xQ-2Eu" firstAttribute="leading" secondItem="uTE-Oi-oi3" secondAttribute="leading" constant="16" id="cbJ-0E-Gco"/>
                             <constraint firstItem="atg-xQ-2Eu" firstAttribute="top" secondItem="Z7e-Nk-qVo" secondAttribute="bottom" constant="8" id="g6T-FL-O1f"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fromField" destination="atg-xQ-2Eu" id="kSZ-c7-UnT"/>
                         <outlet property="phoneField" destination="Z7e-Nk-qVo" id="Fkb-90-tg8"/>
                         <outlet property="prevSchedule" destination="fdL-QU-paR" id="YLZ-TZ-UkR"/>
-                        <outlet property="timeField" destination="atg-xQ-2Eu" id="axs-C1-U7t"/>
+                        <outlet property="tillField" destination="GeB-Rn-7ob" id="hi5-TQ-MPU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8V-qf-lhn" userLabel="First Responder" sceneMemberID="firstResponder"/>

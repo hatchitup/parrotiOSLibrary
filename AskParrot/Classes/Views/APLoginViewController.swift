@@ -37,11 +37,10 @@ class APLoginViewController: UIViewController {
 
     @IBAction func submitAction(_ sender: UIButton) {
         activityIndicator.startAnimating()
-        if user.name != nil {
+        if user.name != nil && queryField.isNotEmpty() {
            raiseTicket()
         }
-        else {
-            if nameField.isNotEmpty() && emailField.isNotEmpty() && locationField.isNotEmpty()  && phoneField.isNotEmpty() {
+        else if nameField.isNotEmpty() && emailField.isNotEmpty() && locationField.isNotEmpty()  && phoneField.isNotEmpty() {
             let u = APUser.init(name: nameField.text!, phone: phoneField.text!, email: emailField.text!, location: locationField.text!)
             u.registerUser(completion: { (result) in
                 DispatchQueue.main.async {
@@ -61,7 +60,6 @@ class APLoginViewController: UIViewController {
                     AlertFactory.defaultAlert(caller: self)
                 }
             })
-        }
             }
     }
     func raiseTicket(){

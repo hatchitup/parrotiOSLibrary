@@ -13,12 +13,14 @@ import SwiftyJSON
 class CallMeViewController: UIViewController {
 
     @IBOutlet weak var phoneField: UITextField!
-    @IBOutlet weak var timeField: UITextField!
+    @IBOutlet weak var fromField: UITextField!
+    @IBOutlet weak var tillField: UITextField!
     @IBOutlet weak var prevSchedule: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeField.isHidden = true
+        
         // Do any additional setup after loading the view.
+        phoneField.text = PersistencyManager.getUser().phone
     }
 
     override func didReceiveMemoryWarning() {

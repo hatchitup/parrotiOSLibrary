@@ -32,6 +32,7 @@ public class HelpDeskViewController: UIViewController {
         getFAQs()
         self.title = AskParrotUI.config.appName
         if let id = PersistencyManager.getUser().id {
+            if id != "" {
             User.info(forUserID: id, completion: { [weak weakSelf = self] (user) in
                 let image = user.profilePic
                 let contentSize = CGSize.init(width: 30, height: 30)
@@ -49,6 +50,7 @@ public class HelpDeskViewController: UIViewController {
                     weakSelf = nil
                 }
             })
+            }
         }
         applyConfiguration(config: AskParrotUI.config)
     }
